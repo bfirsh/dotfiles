@@ -1,0 +1,142 @@
+" Inspiration:
+" http://github.com/askedrelic/homedir/blob/master/.vimrc
+" http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+
+filetype off
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
+
+set nocompatible
+
+" where to put backup files
+set backupdir=~/.vim/backup
+" directory to place swap files in
+set directory=~/.vim/tmp
+
+" allow you to have multiple files open and change between them without saving
+set hidden
+"make backspace work
+set backspace=indent,eol,start
+set showmatch
+" have % bounce between angled brackets, as well as other kinds:
+set matchpairs+=<:>
+set comments=s1:/*,mb:*,ex:*/,f://,b:#,:%,:XCOMM,n:>,fb:-
+
+set encoding=utf-8
+set scrolloff=3
+set showmode
+set showcmd
+set wildmenu
+set wildmode=list:longest
+set wildchar=<TAB>
+set ttyfast
+set ruler
+set laststatus=2
+
+if version >= 703
+    set relativenumber
+    set undofile
+else
+    set number
+endif
+
+let mapleader = ","
+" invisible characters
+set list
+set listchars=tab:▸\ ,eol:¬
+
+
+" Tabs **********************************************************************
+
+function! Tabstyle_tabs()
+    " Using 4 column tabs
+    set softtabstop=4
+    set shiftwidth=4
+    set tabstop=4
+    set noexpandtab
+endfunction
+
+function! Tabstyle_spaces()
+    " Use 4 spaces
+    set expandtab
+    set autoindent
+    set shiftwidth=4
+    set tabstop=4
+    set softtabstop=4
+endfunction
+
+" when at 3 spaces, and I hit > ... go to 4, not 5
+set shiftround 
+
+call Tabstyle_spaces()
+
+set pastetoggle=<F2>
+
+
+" Searching *******************************************************************
+" don't use vim's crazy regex
+nnoremap / /\v
+vnoremap / /\v
+
+" highlight search
+set hlsearch
+" case inferred by default
+set infercase 
+" make searches case-insensitive
+set ignorecase
+"unless they contain upper-case letters:
+set smartcase
+" show the `best match so far' as search strings are typed:
+set incsearch
+" assume the /g flag on :s substitutions to replace all matches in a line:
+set gdefault
+
+" ,<space> to get rid of search highlighting
+nnoremap <leader><space> :noh<cr>
+" tab to match bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
+
+" Colors **********************************************************************
+colorscheme twilight
+syntax on
+set guioptions-=T
+set guioptions-=m
+
+
+" Line wrapping
+" normally don't automatically format `text' as it is typed, IE only do this
+" with comments, at 79 characters:
+set formatoptions=cqr1
+set textwidth=79
+
+" -----------------------------------------------------------------------------
+" | Aliases and custom key functions                                          |
+" -----------------------------------------------------------------------------
+" Professor VIM says '87% of users prefer jj over esc', jj abrams strongly disagrees
+imap jj <Esc>
+
+" sudo save!
+cmap w!! %!sudo tee > /dev/null %
+
+" evil evil learning exercise
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+" open a new split and switch to it
+nnoremap <leader>w <C-w>v<C-w>l
+" ctrl-hjkl for moving around splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
