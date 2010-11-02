@@ -4,3 +4,6 @@
 [submodule ".vim/bundle/NERDTree"]
 	path = .vim/bundle/NERDTree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/command-t"]
+	path = .vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
