@@ -65,6 +65,15 @@ function! Tabstyle_spaces()
     set softtabstop=4
 endfunction
 
+function! Tabstyle_2spaces()
+    " Use 2 spaces
+    set expandtab
+    set autoindent
+    set shiftwidth=2
+    set tabstop=2
+    set softtabstop=2
+endfunction
+
 " when at 3 spaces, and I hit > ... go to 4, not 5
 set shiftround 
 
