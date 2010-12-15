@@ -1,0 +1,13 @@
+[user]
+    name = Ben Firshman
+    email = ben@firshman.co.uk
+
+[alias]
+    st = status
+
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+
