@@ -1,3 +1,10 @@
-.vim/tmp
-.vim/backup
 *~
+*.pyc
+
+.CFUserTextEncoding
+.DS_Store
+.TemporaryItems
+
+/.vim/tmp
+/.vim/backup
+
