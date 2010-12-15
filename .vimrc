@@ -30,6 +30,7 @@ set wildchar=<TAB>
 set ttyfast
 set ruler
 set laststatus=2
+set pastetoggle=<F2>
 
 if version >= 703
     set relativenumber
@@ -54,7 +55,7 @@ function! Tabstyle_tabs()
     set noexpandtab
 endfunction
 
-function! Tabstyle_spaces()
+function! Tabstyle_4spaces()
     " Use 4 spaces
     set expandtab
     set autoindent
@@ -75,9 +76,9 @@ endfunction
 " when at 3 spaces, and I hit > ... go to 4, not 5
 set shiftround 
 
-call Tabstyle_spaces()
+call Tabstyle_4spaces()
 
-set pastetoggle=<F2>
+au FileType html call Tabstyle_2spaces()
 
 
 " Searching *******************************************************************
