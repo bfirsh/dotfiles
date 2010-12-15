@@ -1,0 +1,4 @@
+startup_message off
+defscrollback 15000
+hardstatus alwayslastline '%{=r}%-=%H - %t%-='
+
