@@ -49,3 +49,8 @@ case `hostname -s` in
     ;;
 esac
 
+if [ `hostname -s` != "laptop" ]; then
+    . ~/bin/z.sh
+fi
+
+
