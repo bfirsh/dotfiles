@@ -13,8 +13,6 @@ set backupdir=~/.vim/backup
 " directory to place swap files in
 set directory=~/.vim/tmp
 
-" allow you to have multiple files open and change between them without saving
-set hidden
 "make backspace work
 set backspace=indent,eol,start
 set showmatch
