@@ -40,9 +40,12 @@ else
 endif
 
 let mapleader = ","
-" invisible characters
-set list
-set listchars=tab:▸\ ,eol:¬
+
+if has("gui_running")
+    " invisible characters
+    set list
+    set listchars=tab:▸\ ,eol:¬
+endif
 
 
 " Tabs **********************************************************************
