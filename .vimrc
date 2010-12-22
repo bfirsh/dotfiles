@@ -82,6 +82,7 @@ set shiftround
 call Tabstyle_4spaces()
 
 au FileType html call Tabstyle_2spaces()
+au FileType ruby call Tabstyle_2spaces()
 
 
 " Searching *******************************************************************
