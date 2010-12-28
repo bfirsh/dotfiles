@@ -11,7 +11,7 @@ set nocompatible
 " where to put backup files
 set backupdir=~/.vim/backup
 " directory to place swap files in
-set directory=~/.vim/tmp
+"set directory=~/.vim/tmp
 
 "make backspace work
 set backspace=indent,eol,start
@@ -47,38 +47,34 @@ set listchars=tab:▸\ ,eol:¬
 
 " Tabs **********************************************************************
 
-function! Tabstyle_tabs()
-    " Using 4 column tabs
-    set softtabstop=4
-    set shiftwidth=4
-    set tabstop=4
-    set noexpandtab
-endfunction
-
-function! Tabstyle_4spaces()
-    " Use 4 spaces
-    set expandtab
-    set autoindent
-    set shiftwidth=4
-    set tabstop=4
-    set softtabstop=4
-endfunction
-
-function! Tabstyle_2spaces()
-    " Use 2 spaces
-    set expandtab
-    set autoindent
-    set shiftwidth=2
-    set tabstop=2
-    set softtabstop=2
-endfunction
-
 " when at 3 spaces, and I hit > ... go to 4, not 5
 set shiftround 
 
-call Tabstyle_4spaces()
+function! Indent_tabs()
+    setl softtabstop=4
+    setl shiftwidth=4
+    setl tabstop=4
+    setl noexpandtab
+endfunction
 
-au FileType html call Tabstyle_2spaces()
+function! Indent_4_spaces()
+    setl expandtab
+    setl autoindent
+    setl shiftwidth=4
+    setl tabstop=4
+    setl softtabstop=4
+endfunction
+
+function! Indent_2_spaces()
+    setl expandtab
+    setl autoindent
+    setl shiftwidth=2
+    setl tabstop=2
+    setl softtabstop=2
+endfunction
+
+set expandtab autoindent shiftwidth=4 tabstop=4 softtabstop=4
+au FileType html call Indent_2_spaces()
 
 
 " Searching *******************************************************************
