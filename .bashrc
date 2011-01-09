@@ -53,4 +53,7 @@ if [ `hostname -s` != "laptop" ]; then
     . ~/bin/z.sh
 fi
 
+if [ -f ~/.bashrc_local ]; then
+    source ~/.bashrc_local
+fi
 
