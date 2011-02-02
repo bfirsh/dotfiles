@@ -4,7 +4,7 @@
 # Config
 export PS1='\u@\h:\w\$ '
 export EDITOR="vim"
-export PATH=$PATH:/usr/src/google_appengine/:~/bin/
+export PATH=$PATH:/usr/sbin:/usr/src/google_appengine/:~/bin/
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
