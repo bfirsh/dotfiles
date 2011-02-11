@@ -78,6 +78,7 @@ endfunction
 
 set expandtab autoindent shiftwidth=4 tabstop=4 softtabstop=4
 au FileType html call Indent_2_spaces()
+au FileType htmldjango call Indent_2_spaces()
 au FileType ruby call Indent_2_spaces()
 
 
