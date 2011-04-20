@@ -4,4 +4,5 @@ username = Ben Firshman <ben@firshman.co.uk>
 [extensions]
 color = 
 fetch = 
+progress = 
 
