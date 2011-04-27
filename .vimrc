@@ -81,6 +81,8 @@ au FileType html call Indent_2_spaces()
 au FileType htmldjango call Indent_2_spaces()
 au FileType ruby call Indent_2_spaces()
 
+" Spell checking for latex files
+au FileType tex set spl=en_gb spell
 
 " Searching *******************************************************************
 " don't use vim's crazy regex
