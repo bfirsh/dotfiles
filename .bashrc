@@ -33,6 +33,8 @@ function start_agent {
 # Host specific configs
 case `hostname -s` in
     'zara')
+        # http://hints.macworld.com/article.php?story=20060410092629437
+        export XAUTHORITY=/tmp/.Xauthority.$USER
         # Source SSH settings, if applicable
         if [ -f "${SSH_ENV}" ]; then
             . "${SSH_ENV}" > /dev/null
