@@ -21,6 +21,8 @@ fi
 # SSH agent
 SSH_ENV="$HOME/.ssh/environment"
 
+alias ls="ls --color"
+
 function start_agent {
     echo "Initializing new SSH agent..."
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
