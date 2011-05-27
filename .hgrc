@@ -5,5 +5,7 @@ username = Ben Firshman <ben@firshman.co.uk>
 color = 
 fetch = 
 progress = 
+graphlog = 
+hgk = 
 hgshelve = ~/.hgext/hgshelve.py
 
