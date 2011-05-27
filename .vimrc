@@ -20,6 +20,10 @@ set showmatch
 set matchpairs+=<:>
 set comments=s1:/*,mb:*,ex:*/,f://,b:#,:%,:XCOMM,n:>,fb:-
 
+" allow you to have multiple files open and change between them without saving
+set hidden
+
+
 set encoding=utf-8
 set scrolloff=3
 set showmode
