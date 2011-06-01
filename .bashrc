@@ -21,8 +21,6 @@ fi
 # SSH agent
 SSH_ENV="$HOME/.ssh/environment"
 
-alias ls="ls --color"
-
 function start_agent {
     echo "Initializing new SSH agent..."
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
@@ -37,6 +35,7 @@ case `hostname -s` in
     'zara')
         # http://hints.macworld.com/article.php?story=20060410092629437
         export XAUTHORITY=/tmp/.Xauthority.$USER
+        alias ls="ls --color"
         # Source SSH settings, if applicable
         if [ -f "${SSH_ENV}" ]; then
             . "${SSH_ENV}" > /dev/null
