@@ -2,9 +2,12 @@
 " http://github.com/askedrelic/homedir/blob/master/.vimrc
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
+" Pathogen
 filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
+
+" General
 
 set nocompatible
 
@@ -22,7 +25,6 @@ set comments=s1:/*,mb:*,ex:*/,f://,b:#,:%,:XCOMM,n:>,fb:-
 
 " allow you to have multiple files open and change between them without saving
 set hidden
-
 
 set encoding=utf-8
 set scrolloff=3
@@ -52,7 +54,15 @@ if has("gui_running")
 endif
 
 
-" Tabs **********************************************************************
+" Filetypes
+
+au BufNewFile,BufRead *.html setlocal filetype=htmldjango
+
+" Spell checking for latex files
+au FileType tex set spl=en_gb spell
+
+
+" Tabs
 
 " when at 3 spaces, and I hit > ... go to 4, not 5
 set shiftround 
@@ -85,10 +95,9 @@ au FileType html call Indent_2_spaces()
 au FileType htmldjango call Indent_2_spaces()
 au FileType ruby call Indent_2_spaces()
 
-" Spell checking for latex files
-au FileType tex set spl=en_gb spell
 
-" Searching *******************************************************************
+" Searching
+
 " don't use vim's crazy regex
 nnoremap / /\v
 vnoremap / /\v
@@ -113,7 +122,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 
-" Colors **********************************************************************
+" Colors
 colorscheme twilight
 syntax on
 set guioptions-=T
@@ -126,9 +135,9 @@ set guioptions-=m
 set formatoptions=cqr1
 set textwidth=79
 
-" -----------------------------------------------------------------------------
-" | Aliases and custom key functions                                          |
-" -----------------------------------------------------------------------------
+
+" Aliases
+
 " Professor VIM says '87% of users prefer jj over esc', jj abrams strongly disagrees
 imap jj <Esc>
 
@@ -145,6 +154,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
 
 " Source the vimrc file after saving it
 if has("autocmd")
