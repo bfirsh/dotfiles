@@ -1,5 +1,6 @@
 [ui]
 username = Ben Firshman <ben@firshman.co.uk>
+ignore = ~/.hgignore
 
 [extensions]
 color = 
