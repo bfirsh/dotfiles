@@ -10,3 +10,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
+[submodule "/home/ben/.vim/bundle/threesome"]
+	path = /home/ben/.vim/bundle/threesome
+	url = https://github.com/sjl/threesome.vim.git

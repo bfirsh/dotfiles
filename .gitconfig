@@ -1,5 +1,5 @@
 [user]
-    name = Ben Firshman
+	name = Ben Firshman
     email = ben@firshman.co.uk
 
 [alias]
@@ -10,4 +10,11 @@
     diff = auto
     interactive = auto
     status = auto
+
+[merge]
+    tool = threesome
+
+[mergetool "threesome"]
+    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+    trustExitCode = true
 

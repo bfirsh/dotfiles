@@ -10,3 +10,9 @@ graphlog =
 hgk = 
 hgshelve = ~/.hgext/hgshelve.py
 
+[merge-tools]
+threesome.executable = vim
+threesome.args = -f $base $local $other $output -c 'ThreesomeInit'
+threesome.premerge = keep
+threesome.priority = 1
+
