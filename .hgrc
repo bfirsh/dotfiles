@@ -11,7 +11,7 @@ hgk =
 hgshelve = ~/.hgext/hgshelve.py
 
 [merge-tools]
-threesome.executable = vim
+threesome.executable = mvim
 threesome.args = -f $base $local $other $output -c 'ThreesomeInit'
 threesome.premerge = keep
 threesome.priority = 1

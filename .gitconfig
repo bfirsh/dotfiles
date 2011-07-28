@@ -15,6 +15,6 @@
     tool = threesome
 
 [mergetool "threesome"]
-    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+    cmd = "mvim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
     trustExitCode = true
 
