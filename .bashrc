@@ -56,7 +56,7 @@ if [ `hostname -s` != "laptop" ]; then
     . ~/bin/z.sh
 fi
 
-export SITUAT_CONFIG_FILE=~/.epio/situat.conf
+alias sudo='sudo -E env PATH=$PATH'
 
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
