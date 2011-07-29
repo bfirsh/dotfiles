@@ -56,7 +56,26 @@ endif
 
 " Filetypes
 
+" HTML and HTMLDjango
 au BufNewFile,BufRead *.html setlocal filetype=htmldjango
+au BufNewFile,BufRead *.html setlocal foldmethod=manual
+
+" Use Shift-Return to turn this:
+"     <tag>|</tag>
+"
+" into this:
+"     <tag>
+"         |
+"     </tag>
+au BufNewFile,BufRead *.html inoremap <buffer> <s-cr> <cr><esc>kA<cr>
+au BufNewFile,BufRead *.html nnoremap <buffer> <s-cr> vit<esc>a<cr><esc>vito<esc>i<cr><esc>
+
+" Django tags
+au FileType jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
+
+" Django variables
+au FileType jinja,htmldjango inoremap <buffer> <c-f> {{<space><space>}}<left><left><left>
+
 
 " Spell checking for latex files
 au FileType tex set spl=en_gb spell
