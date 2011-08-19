@@ -56,7 +56,7 @@ if [ `hostname -s` != "laptop" ]; then
     . ~/bin/z.sh
 fi
 
-alias sudo='sudo -E env PATH=$PATH'
+#alias sudo='sudo -E env PATH=$PATH'
 
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local

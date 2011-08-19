@@ -18,3 +18,5 @@
     cmd = "mvim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
     trustExitCode = true
 
+[core]
+	excludesfile = /home/ben/.gitignore_global
