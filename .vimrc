@@ -7,7 +7,7 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
-" General
+" {{{ General
 
 set nocompatible
 
@@ -37,6 +37,7 @@ set ttyfast
 set ruler
 set laststatus=2
 set pastetoggle=<F2>
+set foldmethod=marker
 
 if version >= 703
     set relativenumber
@@ -53,8 +54,8 @@ if has("gui_running")
     set listchars=tab:▸\ ,eol:¬
 endif
 
-
-" Filetypes
+" }}}
+" {{{ Filetypes
 
 " HTML and HTMLDjango
 au BufNewFile,BufRead *.html setlocal filetype=htmldjango
@@ -80,8 +81,8 @@ au FileType jinja,htmldjango inoremap <buffer> <c-f> {{<space><space>}}<left><le
 " Spell checking for latex files
 au FileType tex set spl=en_gb spell
 
-
-" Tabs
+" }}}
+" {{{ Tabs
 
 " when at 3 spaces, and I hit > ... go to 4, not 5
 set shiftround 
@@ -114,8 +115,8 @@ au FileType html call Indent_2_spaces()
 au FileType htmldjango call Indent_2_spaces()
 au FileType ruby call Indent_2_spaces()
 
-
-" Searching
+" }}}
+" {{{ Searching
 
 " don't use vim's crazy regex
 nnoremap / /\v
@@ -140,22 +141,23 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-
-" Colors
+" }}}
+" {{{ Colors
 colorscheme twilight
 syntax on
 set guioptions-=T
 set guioptions-=m
 
 
-" Line wrapping
+" {{{ Line wrapping
 " normally don't automatically format `text' as it is typed, IE only do this
 " with comments, at 79 characters:
 set formatoptions=cqr1
 set textwidth=79
+" }}}
 
-
-" Aliases
+" }}}
+" {{{ Aliases
 
 " Professor VIM says '87% of users prefer jj over esc', jj abrams strongly disagrees
 imap jj <Esc>
@@ -174,6 +176,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" }}}
 
 " Source the vimrc file after saving it
 if has("autocmd")
