@@ -60,6 +60,11 @@ endif
 " HTML and HTMLDjango
 au BufNewFile,BufRead *.html setlocal filetype=htmldjango
 au BufNewFile,BufRead *.html setlocal foldmethod=manual
+au BufNewFile,BufRead *.html setlocal textwidth=0
+au BufNewFile,BufRead urls.py setlocal nowrap
+
+" Use <localleader>f to fold the current tag.
+au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>f Vatzf
 
 " Use Shift-Return to turn this:
 "     <tag>|</tag>
@@ -152,7 +157,7 @@ set guioptions-=m
 " {{{ Line wrapping
 " normally don't automatically format `text' as it is typed, IE only do this
 " with comments, at 79 characters:
-set formatoptions=cqr1
+set formatoptions=qrn1
 set textwidth=79
 " }}}
 
