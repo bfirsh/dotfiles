@@ -47,7 +47,7 @@ case `hostname -s` in
             start_agent;
         fi
     ;;
-    'laptop')
+    laptop|air)
         ssh zara
     ;;
 esac
