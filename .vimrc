@@ -148,6 +148,7 @@ vnoremap <tab> %
 
 " }}}
 " {{{ Colors
+set t_Co=256
 colorscheme twilight
 syntax on
 set guioptions-=T
