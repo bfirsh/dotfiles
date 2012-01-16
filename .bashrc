@@ -32,7 +32,7 @@ function start_agent {
 
 # Host specific configs
 case `hostname -s` in
-    'zara')
+    'sam')
         # http://hints.macworld.com/article.php?story=20060410092629437
         export XAUTHORITY=/tmp/.Xauthority.$USER
         alias ls="ls --color"
@@ -48,7 +48,7 @@ case `hostname -s` in
         fi
     ;;
     laptop|air)
-        ssh zara
+        ssh sam
     ;;
 esac
 
