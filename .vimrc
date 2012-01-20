@@ -1,6 +1,10 @@
 " Inspiration:
 " http://github.com/askedrelic/homedir/blob/master/.vimrc
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+" https://github.com/skwp/dotfiles/blob/master/vimrc
+
+" This must be first, because it changes other options as a side effect.
+set nocompatible
 
 " Pathogen
 filetype off
@@ -8,13 +12,6 @@ call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
 " {{{ General
-
-set nocompatible
-
-" where to put backup files
-set backupdir=~/.vim/backup
-" directory to place swap files in
-"set directory=~/.vim/tmp
 
 "make backspace work
 set backspace=indent,eol,start
@@ -52,6 +49,19 @@ if has("gui_running")
     " invisible characters
     set list
     set listchars=tab:▸\ ,eol:¬
+endif
+
+" No swap files.
+set noswapfile
+set nobackup
+set nowb
+
+" Keep undo history across sessions, by storing in file.
+" Only works in MacVim (gui) mode.
+
+if has('gui_running')
+  set undodir=~/.vim/backups
+  set undofile
 endif
 
 " }}}
@@ -181,6 +191,17 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Change inside quotes with Cmd-" and Cmd-'
+nnoremap <D-'> ci'
+nnoremap <D-"> ci"
+
+" Don't have to use Shift to get into command mode, just hit semicolon
+nnoremap ; :
+
+"Go to last edit location with ,.
+nnoremap ,. '.
+
 
 " }}}
 
