@@ -54,6 +54,7 @@ esac
 
 if [ `hostname -s` != "laptop" ]; then
     . ~/bin/z.sh
+    source ~/.autoenv/activate.sh
 fi
 
 #alias sudo='sudo -E env PATH=$PATH'
