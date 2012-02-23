@@ -20,3 +20,5 @@
 
 [core]
 	excludesfile = /home/ben/.gitignore_global
+[push]
+	default = current
