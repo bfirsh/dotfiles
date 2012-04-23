@@ -1,3 +1,4 @@
 --type-set=puppet=.pp
 --type-set=rst=.rst
 --type-set=scss=.scss
+--type-set=hbs=.hbs
