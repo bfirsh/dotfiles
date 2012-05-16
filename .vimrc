@@ -130,6 +130,8 @@ au FileType html call Indent_2_spaces()
 au FileType htmldjango call Indent_2_spaces()
 au FileType handlebars call Indent_2_spaces()
 au FileType ruby call Indent_2_spaces()
+au FileType coffee call Indent_2_spaces()
+au FileType sass call Indent_2_spaces()
 
 " }}}
 " {{{ Searching
