@@ -5,6 +5,7 @@
 export PS1='\u@\h:\w\$ '
 export EDITOR="vim"
 export PATH=$PATH:/usr/sbin:/usr/src/google_appengine/:~/bin/
+export NODE_PATH=/usr/local/lib/node_modules
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
@@ -47,7 +48,7 @@ case `hostname -s` in
             start_agent;
         fi
     ;;
-    laptop|air)
+    laptop|air|Macintosh)
         ssh sam
     ;;
 esac
@@ -81,3 +82,12 @@ if [ -f ~/.bashrc_local ]; then
 fi
 
 
+
+# {{{
+# Node Completion - Auto-generated, do not touch.
+shopt -s progcomp
+for f in $(command ls ~/.node-completion); do
+  f="$HOME/.node-completion/$f"
+  test -f "$f" && . "$f"
+done
+# }}}
