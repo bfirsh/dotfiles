@@ -48,7 +48,7 @@ case `hostname -s` in
             start_agent;
         fi
     ;;
-    laptop|air|Macintosh)
+    laptop|air|Macintosh|macintosh)
         ssh sam
     ;;
 esac
