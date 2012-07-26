@@ -35,6 +35,7 @@ set ruler
 set laststatus=2
 set pastetoggle=<F2>
 set foldmethod=marker
+set wildignore+=*.o,*~,*.pyc,.git,.git-heroku,.hg,.svn,.sass-cache,node_modules
 
 if version >= 703
     set relativenumber
