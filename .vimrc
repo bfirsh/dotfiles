@@ -163,7 +163,8 @@ vnoremap <tab> %
 " }}}
 " {{{ Colors
 set t_Co=256
-colorscheme twilight
+set background=dark
+colorscheme solarized
 syntax on
 set guioptions-=T
 set guioptions-=m
