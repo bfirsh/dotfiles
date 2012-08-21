@@ -95,4 +95,4 @@ endif
 
 let b:current_syntax = "django"
 
-source $HOME/.vim/bundle/html5/syntax/html/html5.vim
+source $HOME/.vim/bundle/html5/syntax/html.vim

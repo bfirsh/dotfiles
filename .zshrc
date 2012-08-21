@@ -1,17 +1,25 @@
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+# Path to your oh-my-zsh configuration.
+export ZSH=$HOME/.oh-my-zsh
 
-# Config
-export PS1='\u@\h:\w\$ '
+export ZSH_THEME="blinks"
+
+# Set to this to use case-sensitive completion
+# export CASE_SENSITIVE="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git pip cloudapp brews fabric npm django)
+
+source $ZSH/oh-my-zsh.sh
+
+export HISTFILE=/tmp/zsh_history
 export EDITOR="vim"
 export PATH=$PATH:/usr/sbin:/usr/src/google_appengine:~/bin
 export NODE_PATH=/usr/local/lib/node_modules
-export HISTCONTROL=erasedups
-export HISTSIZE=10000
-shopt -s histappend
 
-# Make bash check its window size after a process completes
-shopt -s checkwinsize
+if [ -f /usr/bin/dircolors ]; then
+    eval `dircolors ~/.dir_colors`
+fi
 
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
@@ -47,18 +55,19 @@ case `hostname -s` in
         else
             start_agent;
         fi
+        
+        # z
+        . ~/bin/z.sh
+        function precmd () {
+            _z --add "$(pwd -P)"
+        }
+
     ;;
     laptop|air|Macintosh|macintosh)
         ssh sam
     ;;
 esac
 
-if [ `hostname -s` != "laptop" ]; then
-    . ~/bin/z.sh
-    source ~/.autoenv/activate.sh
-fi
-
-#alias sudo='sudo -E env PATH=$PATH'
 
 GRC=`which grc`
 if [ "$TERM" != dumb ] && [ -n GRC ]
@@ -77,17 +86,4 @@ then
     alias traceroute='colourify /usr/sbin/traceroute'
 fi
 
-if [ -f ~/.bashrc_local ]; then
-    source ~/.bashrc_local
-fi
 
-
-
-# {{{
-# Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
