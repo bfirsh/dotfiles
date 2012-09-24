@@ -93,7 +93,6 @@ au FileType jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><le
 " Django variables
 au FileType jinja,htmldjango inoremap <buffer> <c-f> {{<space><space>}}<left><left><left>
 
-
 " Spell checking for latex files
 au FileType tex set spl=en_gb spell
 
@@ -175,6 +174,19 @@ set guioptions-=m
 " with comments, at 79 characters:
 set formatoptions=qrn1
 set textwidth=79
+
+function! No_Line_Breaks()
+    " http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
+    set wrap
+    set linebreak
+    set nolist  " list disables linebreak
+    set textwidth=0
+    set wrapmargin=0
+endfunction
+
+au FileType markdown,tex call No_Line_Breaks()
+
+
 " }}}
 
 " }}}
