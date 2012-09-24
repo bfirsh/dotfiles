@@ -29,7 +29,7 @@
     trustExitCode = true
 
 [core]
-	excludesfile = /home/ben/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [push]
 	default = current
 [credential]
