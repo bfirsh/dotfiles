@@ -309,4 +309,7 @@ autocmd BufRead,BufWrite * call Pl#Load()
 " Takes forever
 let g:syntastic_disabled_filetypes = ['sass']
 
+" Fix colours in sign column
+highlight clear SignColumn
+
 
