@@ -14,7 +14,7 @@ source $ZSH/oh-my-zsh.sh
 
 export HISTFILE=/tmp/zsh_history
 export EDITOR="vim"
-export PATH=$PATH:/usr/sbin:/usr/src/google_appengine:~/bin
+export PATH=$PATH:/usr/sbin:/usr/src/google_appengine:~/bin:/usr/local/share/npm/bin
 export NODE_PATH=/usr/local/lib/node_modules
 
 if [ -f /usr/bin/dircolors ]; then
