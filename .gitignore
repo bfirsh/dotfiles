@@ -11,12 +11,19 @@
 /.aws
 /.bash_history
 /.bitcoin
-/.epio/situat.conf
+/.cache
+/.epio
+/.mysql_history
+/nohup.out
 /.nohup.out
 /.pip/pip.log
 /.s3cfg*
 /.ssh
 /.Trash
+/.virtualenvs
+/.z
+/.z.*
+/.zcompdump*
 
 /Desktop
 /Documents
@@ -27,8 +34,10 @@
 /Movies
 /Music
 /projects
+/Pictures
 /Public
 /src
+/Software
 /Spotify
 /tmp
 /Virtual Machines
