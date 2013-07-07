@@ -4,3 +4,4 @@
 --type-set=sass=.sass
 --type-set=hbs=.hbs
 --type-set=coffee=.coffee
+--type-set=txt=.txt
