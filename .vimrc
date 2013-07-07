@@ -102,6 +102,7 @@ au FileType jinja,htmldjango inoremap <buffer> <c-f> {{<space><space>}}<left><le
 au FileType tex set spl=en_gb spell
 
 au BufNewFile,BufRead riemann.config set filetype=clojure
+au BufNewFile,BufRead *.md set filetype=markdown
 
 " }}}
 " {{{ Tabs
@@ -192,7 +193,7 @@ function! No_Line_Breaks()
     set wrapmargin=0
 endfunction
 
-au FileType markdown,tex call No_Line_Breaks()
+au FileType markdown,tex,rst call No_Line_Breaks()
 
 
 " }}}
