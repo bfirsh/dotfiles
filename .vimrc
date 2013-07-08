@@ -247,4 +247,12 @@ let g:syntastic_disabled_filetypes = ['sass']
 " Fix colours in sign column
 highlight clear SignColumn
 
+let g:ctrlp_user_command = {
+    \ 'types': {
+        \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
+        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+    \ },
+    \ 'fallback': 'find %s -type f'
+\ }
+
 
