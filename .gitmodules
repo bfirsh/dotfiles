@@ -31,9 +31,6 @@
 [submodule ".vim/bundle/vim-actionscript"]
 	path = .vim/bundle/vim-actionscript
 	url = https://github.com/jeroenbourgois/vim-actionscript.git
-[submodule ".vim/bundle/numbers"]
-	path = .vim/bundle/numbers
-	url = https://github.com/myusuf3/numbers.vim.git
 [submodule ".vim/bundle/twilight"]
 	path = .vim/bundle/twilight
 	url = https://github.com/matthewtodd/vim-twilight.git
