@@ -134,13 +134,16 @@ function! Indent_2_spaces()
 endfunction
 
 set expandtab autoindent shiftwidth=4 tabstop=4 softtabstop=4
+au FileType coffee call Indent_2_spaces()
+au FileType eruby call Indent_2_spaces()
 au FileType html call Indent_2_spaces()
 au FileType htmldjango call Indent_2_spaces()
 au FileType handlebars call Indent_2_spaces()
-au FileType ruby call Indent_2_spaces()
-au FileType coffee call Indent_2_spaces()
-au FileType sass call Indent_2_spaces()
+au FileType javascript call Indent_2_spaces()
 au FileType python call Indent_4_spaces()
+au FileType ruby call Indent_2_spaces()
+au FileType sass call Indent_2_spaces()
+au FileType scss.css call Indent_2_spaces()
 
 " }}}
 " {{{ Searching
@@ -243,6 +246,8 @@ autocmd BufRead,BufWrite * call Pl#Load()
 
 " Takes forever
 let g:syntastic_disabled_filetypes = ['sass']
+
+let g:syntastic_ruby_exec = '/usr/local/opt/rbenv/versions/1.9.3-p448/bin/ruby'
 
 " Fix colours in sign column
 highlight clear SignColumn
