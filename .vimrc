@@ -240,12 +240,8 @@ if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
-" Bug in vim-puppet that kills powerline
-" https://github.com/Lokaltog/vim-powerline/issues/28
-autocmd BufRead,BufWrite * call Pl#Load()
-
 " Takes forever
-let g:syntastic_disabled_filetypes = ['sass']
+let g:syntastic_disabled_filetypes = ['sass', 'python']
 
 let g:syntastic_ruby_exec = '/usr/local/opt/rbenv/versions/1.9.3-p448/bin/ruby'
 
