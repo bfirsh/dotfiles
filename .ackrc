@@ -5,3 +5,4 @@
 --type-set=hbs=.hbs
 --type-set=coffee=.coffee
 --type-set=txt=.txt
+--type-set=feature=.feature
