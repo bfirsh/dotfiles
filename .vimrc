@@ -255,5 +255,6 @@ let g:ctrlp_user_command = {
     \ },
     \ 'fallback': 'find %s -type f'
 \ }
+let g:ctrlp_lazy_update = 150
 
 
