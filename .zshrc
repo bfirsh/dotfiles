@@ -63,7 +63,7 @@ case `hostname -s` in
         }
 
     ;;
-    laptop|air|Macintosh|macintosh)
+    laptop|air|Macintosh|macintosh|computer)
         ssh sam
     ;;
 esac
