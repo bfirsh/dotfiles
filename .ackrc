@@ -6,3 +6,4 @@
 --type-set=coffee=.coffee
 --type-set=txt=.txt
 --type-set=feature=.feature
+--type-set=mustache=.mustache
