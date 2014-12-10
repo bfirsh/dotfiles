@@ -249,6 +249,7 @@ let g:syntastic_ruby_exec = '/usr/local/opt/rbenv/versions/1.9.3-p448/bin/ruby'
 " Fix colours in sign column
 highlight clear SignColumn
 
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_user_command = {
     \ 'types': {
         \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
