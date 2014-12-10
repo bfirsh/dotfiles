@@ -49,6 +49,7 @@
 /.z
 /.z.*
 /.zcompdump*
+/.zshrc-private
 
 /Desktop
 /Documents

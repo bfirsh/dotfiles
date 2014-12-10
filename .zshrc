@@ -91,3 +91,7 @@ function git_prompt_info() {
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}${ZSH_THEME_GIT_PROMPT_CLEAN}${ZSH_THEME_GIT_PROMPT_SUFFIX}"
 }
 
+if [[ -e $HOME/.zshrc-private ]]; then
+    source $HOME/.zshrc-private
+fi
+
