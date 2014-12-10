@@ -17,6 +17,7 @@
 /.bower
 /.bundle
 /.cache
+/.docker
 /.dotcloud
 /.epio
 /.gdb_history
