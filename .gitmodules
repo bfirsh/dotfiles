@@ -58,3 +58,9 @@
 [submodule ".vim/bundle/airline"]
 	path = .vim/bundle/airline
 	url = git@github.com:bling/vim-airline.git
+[submodule ".vim/bundle/dockerfile"]
+	path = .vim/bundle/dockerfile
+	url = git@github.com:honza/dockerfile.vim.git
+[submodule ".vim/bundle/go"]
+	path = .vim/bundle/go
+	url = git@github.com:fatih/vim-go.git
