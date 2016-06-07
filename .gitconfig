@@ -1,6 +1,10 @@
 [user]
 	name = Ben Firshman
 	email = ben@firshman.co.uk
+	signingkey = E36D2F1E
+
+[github]
+    user = bfirsh
 
 [alias]
     st = status
@@ -34,3 +38,11 @@
 	default = simple
 [credential]
 	helper = cache --timeout=216000
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
