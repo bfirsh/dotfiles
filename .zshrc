@@ -45,36 +45,6 @@ function start_agent {
     /usr/bin/ssh-add;
 }
 
-# Host specific configs
-case `hostname -s` in
-    'sam')
-        # http://hints.macworld.com/article.php?story=20060410092629437
-        export XAUTHORITY=/tmp/.Xauthority.$USER
-        alias ls="ls --color"
-        # Source SSH settings, if applicable
-        if [ -f "${SSH_ENV}" ]; then
-            . "${SSH_ENV}" > /dev/null
-            #ps ${SSH_AGENT_PID} doesn't work under cywgin
-            ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-            start_agent;
-        }
-        else
-            start_agent;
-        fi
-        
-        # z
-        . ~/bin/z.sh
-        function precmd () {
-            _z --add "$(pwd -P)"
-        }
-
-    ;;
-    laptop|air|Macintosh|macintosh|computer)
-        ssh sam
-    ;;
-esac
-
-
 GRC=`which grc`
 if [ "$TERM" != dumb ] && [ -n GRC ]
 then
