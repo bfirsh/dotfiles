@@ -31,33 +31,6 @@ function start_agent {
     /usr/bin/ssh-add;
 }
 
-# Host specific configs
-case `hostname -s` in
-    'sam')
-        # http://hints.macworld.com/article.php?story=20060410092629437
-        export XAUTHORITY=/tmp/.Xauthority.$USER
-        alias ls="ls --color"
-        # Source SSH settings, if applicable
-        if [ -f "${SSH_ENV}" ]; then
-            . "${SSH_ENV}" > /dev/null
-            #ps ${SSH_AGENT_PID} doesn't work under cywgin
-            ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-            start_agent;
-        }
-        else
-            start_agent;
-        fi
-    ;;
-    laptop|air|Macintosh|macintosh)
-        ssh sam
-    ;;
-esac
-
-if [ `hostname -s` != "laptop" ]; then
-    . ~/bin/z.sh
-    source ~/.autoenv/activate.sh
-fi
-
 #alias sudo='sudo -E env PATH=$PATH'
 
 GRC=`which grc`
@@ -81,13 +54,3 @@ if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
 fi
 
-
-
-# {{{
-# Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
