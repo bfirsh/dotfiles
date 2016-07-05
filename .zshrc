@@ -22,17 +22,6 @@ if [ -f /usr/bin/dircolors ]; then
     eval `dircolors ~/.dir_colors`
 fi
 
-# virtualenvwrapper on linux
-if [ -f "/etc/bash_completion.d/virtualenvwrapper" ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /etc/bash_completion.d/virtualenvwrapper
-fi
-# virtualenvwrapper on mac
-if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
-    export WORKON_HOME=$HOME/.virtualenvs-osx
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
 # SSH agent
 SSH_ENV="$HOME/.ssh/environment"
 
