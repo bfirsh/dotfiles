@@ -16,15 +16,21 @@ export HISTFILE=/tmp/zsh_history
 export EDITOR="vim"
 export PATH=$PATH:/usr/sbin:/usr/src/google_appengine:~/bin:/usr/local/share/npm/bin:/usr/local/packer
 export NODE_PATH=/usr/local/lib/node_modules
+export CLICOLOR=1
 
 if [ -f /usr/bin/dircolors ]; then
     eval `dircolors ~/.dir_colors`
 fi
 
-# virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
+# virtualenvwrapper on linux
 if [ -f "/etc/bash_completion.d/virtualenvwrapper" ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
     source /etc/bash_completion.d/virtualenvwrapper
+fi
+# virtualenvwrapper on mac
+if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
+    export WORKON_HOME=$HOME/.virtualenvs-osx
+    source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 # SSH agent
