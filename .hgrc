@@ -8,8 +8,9 @@ fetch =
 progress = 
 graphlog = 
 hgk = 
-hgshelve = ~/.hgext/hgshelve.py
+#hgshelve = ~/.hgext/hgshelve.py
 hgext.bookmarks =
+hgext.gpg=
 #hggit = 
 
 [merge-tools]
