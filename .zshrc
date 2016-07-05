@@ -65,6 +65,14 @@ function git_prompt_info() {
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}${ZSH_THEME_GIT_PROMPT_CLEAN}${ZSH_THEME_GIT_PROMPT_SUFFIX}"
 }
 
+export GOPATH=~/go
+export PATH="$GOPATH/bin:$PATH"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+source /usr/local/google-cloud-sdk/path.zsh.inc
+
 if [[ -e $HOME/.zshrc-private ]]; then
     source $HOME/.zshrc-private
 fi
