@@ -65,6 +65,7 @@ set nowb
 " Keep undo history across sessions, by storing in file.
 " Only works in MacVim (gui) mode.
 
+set noundofile
 if has('gui_running')
   set undodir=~/.vim/backups
   set undofile
@@ -258,5 +259,7 @@ let g:ctrlp_user_command = {
     \ 'fallback': 'find %s -type f'
 \ }
 let g:ctrlp_lazy_update = 150
+
+let g:airline_powerline_fonts = 1
 
 
