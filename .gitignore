@@ -10,6 +10,12 @@
 
 /.adobe
 /.appcfg_*
+/.atom/.apm/
+/.atom/.node-gyp
+/.atom/blob-store/
+/.atom/compile-cache/
+/.atom/packages/
+/.atom/storage/
 /.autoenv_authorized
 /.aws
 /.bash_history
@@ -33,6 +39,7 @@
 /.npm
 /.npmrc
 /.nohup.out
+/.password-store
 /.pip/pip.log
 /.plex
 /.puppet
