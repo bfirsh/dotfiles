@@ -31,8 +31,12 @@
     goPath: "~/go:~/go/src/github.com/docker/docker/vendor"
   gofmt:
     formatTool: "gofmt"
-  linter:
-    showErrorPanel: false
+  linter: {}
+  "linter-pylint": {}
+  "linter-python":
+    executablePath: "/usr/local/bin/pylama"
+    withPep8: true
+    withPylint: true
   "linter-python-pyflakes":
     pyflakesDirToExecutable: "/usr/local/bin/"
   metrics:
