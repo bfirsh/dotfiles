@@ -60,8 +60,6 @@ export PATH="$GOPATH/bin:$PATH"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-source /usr/local/google-cloud-sdk/path.zsh.inc
-
 if [[ -e $HOME/.zshrc-private ]]; then
     source $HOME/.zshrc-private
 fi
