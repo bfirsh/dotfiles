@@ -24,7 +24,6 @@
 /.bundle
 /.cache
 /.docker
-/.dotcloud
 /.epio
 /.gdb_history
 /.gnupg
@@ -46,6 +45,7 @@
 /.psql_history
 /.pypirc
 /.rediscli_history
+/.resin
 /.s3cfg*
 /.sqlite_history
 /.ssh
