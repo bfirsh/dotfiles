@@ -64,3 +64,5 @@ if [[ -e $HOME/.zshrc-private ]]; then
     source $HOME/.zshrc-private
 fi
 
+# https://yarnpkg.com/en/docs/install
+export PATH="$PATH:`yarn global bin`"
