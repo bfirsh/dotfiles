@@ -65,3 +65,8 @@ fi
 
 # https://yarnpkg.com/en/docs/install
 export PATH="$PATH:`yarn global bin`"
+
+# Use Homebrew's /usr/local/bin/python2 as python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
