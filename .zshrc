@@ -13,7 +13,7 @@ plugins=(autopep8 bower bundler brew coffee docker docker-compose django emoji-c
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR="vim"
-export PATH=$PATH:/usr/sbin:/usr/src/google_appengine:~/bin:/usr/local/share/npm/bin
+export PATH=$PATH:/usr/sbin:/usr/local/sbin:/usr/src/google_appengine:~/bin:/usr/local/share/npm/bin
 export NODE_PATH=/usr/local/lib/node_modules
 export CLICOLOR=1
 
