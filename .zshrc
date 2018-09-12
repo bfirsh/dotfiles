@@ -10,25 +10,28 @@ export ZSH_THEME="blinks"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
   autopep8
+  aws
   bower
   bundler
   brew
-  coffee
+  django
   docker
   docker-compose
-  django
+  docker-machine
   emoji-clock
   extract
   fabric
+  gem
   git
   github
   gpg-agent
   heroku
   history
   lein
+  mercurial
   node
   npm
-  nyan
+  npx
   osx
   pip
   postgres
@@ -36,6 +39,7 @@ plugins=(
   rbenv
   safe-paste
   vagrant
+  yarn
   z
 )
 
