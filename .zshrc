@@ -9,25 +9,17 @@ export ZSH_THEME="blinks"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
-  autopep8
   aws
-  bower
-  bundler
   brew
   django
   docker
   docker-compose
-  docker-machine
-  emoji-clock
   extract
-  fabric
-  gem
   git
   github
   gpg-agent
   heroku
   history
-  lein
   mercurial
   node
   npm
@@ -36,9 +28,7 @@ plugins=(
   pip
   postgres
   python
-  rbenv
   safe-paste
-  vagrant
   yarn
   z
 )
