@@ -1,9 +1,3 @@
-[submodule ".vim/bundle/ack.vim"]
-	path = .vim/bundle/ack.vim
-	url = git://github.com/mileszs/ack.vim.git
-[submodule ".vim/bundle/NERDTree"]
-	path = .vim/bundle/NERDTree
-	url = git://github.com/scrooloose/nerdtree.git
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
@@ -13,48 +7,18 @@
 [submodule ".vim/bundle/smartinput"]
 	path = .vim/bundle/smartinput
 	url = https://github.com/kana/vim-smartinput.git
-[submodule ".vim/bundle/vim-coffee-script"]
-	path = .vim/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule ".vim/bundle/handlebars"]
-	path = .vim/bundle/handlebars
-	url = git://github.com/nono/vim-handlebars.git
 [submodule ".vim/bundle/scss-syntax.vim"]
 	path = .vim/bundle/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim.git
-[submodule ".vim/bundle/ctrlp.vim"]
-	path = .vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/vim-actionscript"]
-	path = .vim/bundle/vim-actionscript
-	url = https://github.com/jeroenbourgois/vim-actionscript.git
-[submodule ".vim/bundle/twilight"]
-	path = .vim/bundle/twilight
-	url = https://github.com/matthewtodd/vim-twilight.git
 [submodule ".vim/bundle/colors-solarized"]
 	path = .vim/bundle/colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/fugitive"]
-	path = .vim/bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/puppet"]
 	path = .vim/bundle/puppet
 	url = git://github.com/rodjek/vim-puppet.git
-[submodule ".vim/bundle/nerdcommenter"]
-	path = .vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter
-[submodule ".vim/bundle/VimClojure"]
-	path = .vim/bundle/VimClojure
-	url = git://github.com/vim-scripts/VimClojure.git
-[submodule ".vim/bundle/gitgutter"]
-	path = .vim/bundle/gitgutter
-	url = git://github.com/airblade/vim-gitgutter.git
-[submodule ".vim/bundle/YouCompleteMe"]
-	path = .vim/bundle/YouCompleteMe
-	url = git://github.com/Valloric/YouCompleteMe.git
 [submodule ".vim/bundle/airline"]
 	path = .vim/bundle/airline
 	url = git@github.com:bling/vim-airline.git

@@ -260,6 +260,6 @@ let g:ctrlp_user_command = {
 \ }
 let g:ctrlp_lazy_update = 150
 
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 
