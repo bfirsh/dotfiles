@@ -13,12 +13,6 @@ shopt -s histappend
 # Make bash check its window size after a process completes
 shopt -s checkwinsize
 
-# virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-if [ -f "/etc/bash_completion.d/virtualenvwrapper" ]; then
-    source /etc/bash_completion.d/virtualenvwrapper
-fi
-
 # SSH agent
 SSH_ENV="$HOME/.ssh/environment"
 
