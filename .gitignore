@@ -14,6 +14,7 @@
 /.bash_history
 /.bundle
 /.cache
+/.config
 /.docker
 /.dropbox
 /.gdb_history
@@ -23,10 +24,13 @@
 /.ipython/db
 /.ipython/history*
 /.ipython/profile_*
+/.lesshst
 /.local
 /.mysql_history
 /.netrc
 /.node-completion
+/.node-gyp
+/.node_repl_history
 /nohup.out
 /.npm
 /.npmrc
@@ -35,7 +39,9 @@
 /.pip/pip.log
 /.puppet
 /.psql_history
+/.pylint.d
 /.pypirc
+/.python_history
 /.rediscli_history
 /.s3cfg*
 /.sqlite_history
@@ -46,9 +52,12 @@
 /.vagrant.d
 /.viminfo
 /.virtualenvs
+/.vscode/extensions
+/.yarnrc
 /.Xauthority
 /.z
 /.z.*
+/.zoomus
 /.zcompdump*
 /.zshrc-private
 /.zsh_history
