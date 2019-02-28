@@ -93,4 +93,6 @@ export PATH="$PATH:`yarn global bin`"
 # Use Homebrew's /usr/local/bin/python2 as python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
+alias fig=docker-compose
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
