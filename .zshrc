@@ -15,6 +15,7 @@ plugins=(
   docker
   docker-compose
   extract
+  fzf
   git
   github
   gpg-agent
