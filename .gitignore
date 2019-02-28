@@ -15,6 +15,7 @@
 /.bundle
 /.cache
 /.config
+/.cups
 /.docker
 /.dropbox
 /.gdb_history
@@ -54,6 +55,7 @@
 /.virtualenvs
 /.vscode/extensions
 /.yarnrc
+/.wget-hsts
 /.Xauthority
 /.z
 /.z.*
