@@ -3,6 +3,9 @@ export ZSH=$HOME/.oh-my-zsh
 
 export ZSH_THEME="blinks"
 
+# Homebrew
+export PATH="/usr/local/bin:$PATH"
+
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
