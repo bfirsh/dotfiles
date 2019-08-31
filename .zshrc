@@ -33,6 +33,7 @@ plugins=(
   pip
   postgres
   python
+  ripgrep
   safe-paste
   yarn
   z
