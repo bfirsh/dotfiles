@@ -16,6 +16,7 @@
 /.cache
 /.config
 /.cups
+/.dat
 /.docker
 /.dropbox
 /.gdb_history
