@@ -27,7 +27,8 @@ plugins=(
   mercurial
   node
   npm
-  npx
+  # causing hanging on latest node
+  #npx
   osx
   pip
   postgres
