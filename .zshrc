@@ -3,7 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 export ZSH_THEME="blinks"
 
-# Homebrew
+# Homebrew, before everything else so plugins work
 export PATH="/usr/local/bin:$PATH"
 
 # Set to this to use case-sensitive completion
@@ -19,6 +19,7 @@ plugins=(
   docker-compose
   extract
   fzf
+  gcloud
   git
   github
   gpg-agent
@@ -42,15 +43,36 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR="vim"
-export PATH=$PATH:/usr/sbin:/usr/local/sbin:/usr/src/google_appengine:~/bin:/usr/local/share/npm/bin
-export NODE_PATH=/usr/local/lib/node_modules
 export CLICOLOR=1
+
+
+## Paths
+export PATH=$PATH:/usr/sbin:/usr/local/sbin:/usr/src/google_appengine:~/bin:/usr/local/share/npm/bin
+
+export NODE_PATH=/usr/local/lib/node_modules
+
+export GOPATH=~/go
+export PATH="$GOPATH/bin:$PATH"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# https://yarnpkg.com/en/docs/install
+export PATH="$PATH:`yarn global bin`"
+
+# Use Homebrew's Python as `python
+export PATH="/usr/local/opt/python@3.8/libexec/bin:$PATH"
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
 
 if [ -f /usr/bin/dircolors ]; then
     eval `dircolors ~/.dir_colors`
 fi
 
-# SSH agent
+## SSH agent
 SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {
@@ -61,6 +83,10 @@ function start_agent {
     . "${SSH_ENV}" > /dev/null
     /usr/bin/ssh-add;
 }
+
+## Aliases
+
+alias fig=docker-compose
 
 GRC=`which grc`
 if [ "$TERM" != dumb ] && [ -n GRC ]
@@ -77,27 +103,31 @@ then
     alias traceroute='colourify /usr/sbin/traceroute'
 fi
 
+if [ -n `which bat` ]; then
+    alias cat="bat -p"
+fi
+
+if [ -n `which rmtrash` ]; then
+    alias rm='rmtrash'
+fi
+
 function git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}${ZSH_THEME_GIT_PROMPT_CLEAN}${ZSH_THEME_GIT_PROMPT_SUFFIX}"
 }
 
-export GOPATH=~/go
-export PATH="$GOPATH/bin:$PATH"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
+test -e /Users/ben/.iterm2_shell_integration.zsh && source /Users/ben/.iterm2_shell_integration.zsh || true
+
+ulimit -n 65536 200000
+# started happening on bug sur?
+ulimit -f unlimited
+
+
+# last
 if [[ -e $HOME/.zshrc-private ]]; then
     source $HOME/.zshrc-private
 fi
 
-# https://yarnpkg.com/en/docs/install
-export PATH="$PATH:`yarn global bin`"
-
-# Use Homebrew's /usr/local/bin/python2 as python
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
-alias fig=docker-compose
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
