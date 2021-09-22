@@ -52,3 +52,7 @@
 	gpgsign = true
 [hub]
 	protocol = ssh
+[branch]
+	sort = -committerdate
+[init]
+	defaultBranch = main
