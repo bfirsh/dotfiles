@@ -201,6 +201,9 @@ endfunction
 au FileType markdown,tex,rst call No_Line_Breaks()
 
 
+au FileType gitcommit setlocal formatoptions=tan1w
+
+
 " }}}
 
 " }}}
