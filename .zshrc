@@ -14,7 +14,6 @@ export PATH="/usr/local/bin:$PATH"
 plugins=(
   aws
   brew
-  django
   docker
   docker-compose
   extract
