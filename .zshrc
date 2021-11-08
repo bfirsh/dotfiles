@@ -96,6 +96,11 @@ function start_agent {
 
 alias fig=docker-compose
 
+# https://github.com/PhrozenByte/rmtrash
+alias rm='rmtrash'
+alias rmdir='rmdirtrash'
+alias sudo='sudo '
+
 GRC=`which grc`
 if [ "$TERM" != dumb ] && [ -n GRC ]
 then
@@ -113,10 +118,6 @@ fi
 
 if [ -n `which bat` ]; then
     alias cat="bat -p"
-fi
-
-if [ -n `which rmtrash` ]; then
-    alias rm='rmtrash'
 fi
 
 function git_prompt_info() {
