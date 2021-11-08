@@ -4,7 +4,16 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="blinks"
 
 # Homebrew, before everything else so plugins work
-export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+
+# https://docs.brew.sh/Shell-Completion
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -62,7 +71,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:`yarn global bin`"
 
 # Use Homebrew's Python as `python
-export PATH="/usr/local/opt/python@3.8/libexec/bin:$PATH"
+export PATH="/opt/homebrew/opt/python@3.10/libexec/bin:$PATH"
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
