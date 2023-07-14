@@ -97,9 +97,9 @@ function start_agent {
 alias fig=docker-compose
 
 # https://github.com/PhrozenByte/rmtrash
-alias rm='rmtrash'
-alias rmdir='rmdirtrash'
-alias sudo='sudo '
+#alias rm='rmtrash'
+#alias rmdir='rmdirtrash'
+#alias sudo='sudo '
 
 GRC=`which grc`
 if [ "$TERM" != dumb ] && [ -n GRC ]
@@ -139,4 +139,5 @@ ulimit -f unlimited
 if [[ -e $HOME/.zshrc-private ]]; then
     source $HOME/.zshrc-private
 fi
+
 

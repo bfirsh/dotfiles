@@ -1,6 +1,6 @@
 [user]
 	name = Ben Firshman
-	email = ben@firshman.co.uk
+	email = ben@firshman.com
 	signingkey = E36D2F1E
 
 [github]
@@ -49,7 +49,7 @@
 	required = true
 	process = git-lfs filter-process
 [commit]
-	gpgsign = true
+	gpgsign = false
 [hub]
 	protocol = ssh
 [branch]
