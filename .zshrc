@@ -94,7 +94,9 @@ function start_agent {
 
 ## Aliases
 
-alias fig=docker-compose
+fig() {
+  command docker compose "$@"
+}
 
 # https://github.com/PhrozenByte/rmtrash
 #alias rm='rmtrash'
