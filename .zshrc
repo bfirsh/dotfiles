@@ -115,7 +115,7 @@ then
     alias traceroute='colourify /usr/sbin/traceroute'
 fi
 
-if [ -n `which bat` ]; then
+if command -v bat >/dev/null 2>&1; then
     alias cat="bat -p"
 fi
 

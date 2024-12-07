@@ -1,0 +1,47 @@
+#!/bin/zsh
+set -e
+
+if [ ! -f ~/.ssh/id_rsa ]; then
+  echo "Put your SSH key in ~/.ssh"
+  exit 1
+fi
+
+if [ ! -d ~/.git ]; then
+  echo "Cloning dotfiles..."
+  git init
+  git remote add origin git@github.com:bfirsh/dotfiles.git
+  git branch --set-upstream-to=origin/main main
+  git pull origin main
+  git submodule init
+  git submodule update
+fi
+
+
+# Homebrew
+if test ! $(which brew); then
+  echo "Installing homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+brew update
+brew bundle install --global --no-upgrade
+
+# Backup and symlink Cursor config files if they don't exist or aren't symlinks
+for file in "settings.json" "keybindings.json"; do
+  if [ ! -e ~/Library/Application\ Support/Cursor/User/$file ] || [ ! -L ~/Library/Application\ Support/Cursor/User/$file ]; then
+    if [ -f ~/Library/Application\ Support/Cursor/User/$file ]; then
+      echo "Backing up Cursor $file"
+      mv ~/Library/Application\ Support/Cursor/User/$file ~/Library/Application\ Support/Cursor/User/$file.backup
+    fi
+    echo "Creating symlink for $file"
+    mkdir -p ~/Library/Application\ Support/Cursor/User
+    ln -s ~/.cursor/$file ~/Library/Application\ Support/Cursor/User/$file
+  fi
+done
+
+# macOS settings
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+
+
+
