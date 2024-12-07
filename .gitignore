@@ -14,22 +14,31 @@
 /.bash_history
 /.bundle
 /.cache
+/.cargo
+/.cocoapods
 /.config
 /.cups
+/.cursor
+/.cursor-tutor*
 /.dat
 /.docker
 /.dropbox
+/.fly
 /.gdb_history
 /.gnupg
+/.gsutil
 /.heroku
 /.keybase*
+/.kube
 /.ipython/db
 /.ipython/history*
 /.ipython/profile_*
+/.iterm2*
 /.lesshst
 /.local
 /.mysql_history
 /.netrc
+/.ngrok2
 /.node-completion
 /.node-gyp
 /.node_repl_history
@@ -37,8 +46,9 @@
 /.npm
 /.npmrc
 /.nohup.out
+/.ollama
 /.password-store
-/.pip/pip.log
+/.pip
 /.puppet
 /.psql_history
 /.pylint.d
@@ -49,12 +59,14 @@
 /.sqlite_history
 /.ssh
 /.sudo_as_admin_successful
+/.swiftpm
 /.Trash
 /.tor
 /.vagrant.d
 /.viminfo
 /.virtualenvs
-/.vscode/extensions
+/.vscode
+/.yarn
 /.yarnrc
 /.wget-hsts
 /.Xauthority
@@ -64,6 +76,7 @@
 /.zcompdump*
 /.zshrc-private
 /.zsh_history
+/.zsh_sessions
 
 /Applications
 /backup
@@ -74,11 +87,12 @@
 /Downloads
 /Dropbox
 /go
-/Google Drive
+/*Google Drive
 /Library
 /Movies
 /Music
 /projects
+/OneDrive*
 /Pictures
 /Public
 /Private
