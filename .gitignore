@@ -33,7 +33,8 @@
 /.ipython/db
 /.ipython/history*
 /.ipython/profile_*
-/.iterm2*
+/.iterm2
+/.iterm2_shell_integration.zsh
 /.lesshst
 /.local
 /.mysql_history
