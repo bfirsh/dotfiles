@@ -67,9 +67,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# https://yarnpkg.com/en/docs/install
-export PATH="$PATH:`yarn global bin`"
-
 # Use Homebrew's Python as `python
 export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
 
