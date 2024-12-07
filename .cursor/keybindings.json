@@ -1,0 +1,39 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "cmd+h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "cmd+l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+d",
+    "command": "workbench.action.splitEditorRight"
+  },
+  {
+    "key": "cmd+d",
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+d",
+    "command": "-extension.vim_cmd+d",
+    "when": "editorTextFocus && vim.active && vim.use<D-d> && !inDebugRepl"
+  },
+  {
+    "key": "cmd+w",
+    "command": "-workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  }
+]

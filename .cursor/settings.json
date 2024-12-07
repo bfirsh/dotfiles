@@ -1,0 +1,65 @@
+{
+    "workbench.colorTheme": "Braver's Solarized Dark (themed workbench)",
+    "files.insertFinalNewline": true,
+    "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+    "vim.foldfix": true,
+    "go.formatTool": "goimports",
+    "editor.renderControlCharacters": true,
+    "editor.suggest.localityBonus": true,
+    "terminal.integrated.scrollback": 10000,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "python.analysis.indexing": true,
+    "go.toolsManagement.autoUpdate": true,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": false,
+        "markdown": true
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "editor.inlineSuggest.enabled": true,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[markdown]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnPaste": false
+    },
+    "editor.fontFamily": "Berkeley Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "git.openRepositoryInParentFolders": "always",
+    "githubPullRequests.pullBranch": "never",
+    "editor.accessibilitySupport": "off",
+    "remote.autoForwardPortsSource": "hybrid",
+    "cursor.cpp.disabledLanguages": [
+        "plaintext"
+    ],
+    "debug.javascript.autoAttachFilter": "disabled",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
