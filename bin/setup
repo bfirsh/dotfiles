@@ -42,6 +42,8 @@ done
 # macOS settings
 defaults write -g ApplePressAndHoldEnabled -bool false
 
-
+# iterm
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm2-config"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 
