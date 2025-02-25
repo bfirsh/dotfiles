@@ -37,6 +37,8 @@
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [push]
 	default = simple
+	autoSetupRemote = true
+	followTags = true
 [credential]
 	helper = cache --timeout=216000
 [filter "media"]
@@ -50,9 +52,23 @@
 	process = git-lfs filter-process
 [commit]
 	gpgsign = false
+	verbose = true
 [hub]
 	protocol = ssh
 [branch]
 	sort = -committerdate
 [init]
 	defaultBranch = main
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[pull]
+	rebase = true
