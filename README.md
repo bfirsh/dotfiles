@@ -6,3 +6,7 @@ git remote add origin git@github.com:bfirsh/dotfiles.git
 git branch --set-upstream-to=origin/main main
 git pull origin main
 ```
+
+## Manual steps
+
+- Install Berkeley Mono from Documents/fonts/

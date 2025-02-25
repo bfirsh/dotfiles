@@ -41,6 +41,8 @@ done
 
 # macOS settings
 defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
 
 # iterm
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm2-config"
