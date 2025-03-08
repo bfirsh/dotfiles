@@ -1,10 +1,9 @@
 # dotfiles
 
 ```
-git init
-git remote add origin git@github.com:bfirsh/dotfiles.git
-git branch --set-upstream-to=origin/main main
-git pull origin main
+git clone git@github.com:bfirsh/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+script/setup
 ```
 
 ## Manual steps

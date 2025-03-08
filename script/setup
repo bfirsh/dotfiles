@@ -1,0 +1,139 @@
+#!/bin/zsh
+set -e
+
+DOTFILES_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+
+if [ ! -f ~/.ssh/id_rsa ]; then
+  echo "Put your SSH key in ~/.ssh"
+  exit 1
+fi
+
+# Create symlinks from dotfiles to home directory
+echo "Creating symlinks..."
+
+# List of files/directories to exclude from symlinking
+EXCLUDE=(
+  "script"
+  "README.md"
+  ".git"
+  ".gitignore"
+  ".gitmodules"
+)
+
+# Function to check if an item is in the exclude list
+is_excluded() {
+  local item="$1"
+  for exclude in "${EXCLUDE[@]}"; do
+    if [[ "$item" == "$exclude" ]]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
+# Function to recursively create symlinks
+create_symlinks() {
+  local source_dir="$1"
+  local target_dir="$2"
+  local rel_path="${3:-}"
+  
+  # Process all items (files and directories) using Zsh glob qualifiers
+  # (D) includes hidden files/dirs (dotfiles)
+  # (N) sets nullglob (empty list if no matches)
+  for item in "$source_dir"/*(DN) "$source_dir"/.(DN); do
+    local base_name=$(basename "$item")
+    
+    # Skip . and .. directories
+    if [[ "$base_name" == "." || "$base_name" == ".." ]]; then
+      continue
+    fi
+    
+    # Skip excluded items
+    if is_excluded "$base_name"; then
+      continue
+    fi
+    
+    local target_path="$target_dir/$base_name"
+    local source_path="${item}"
+    
+    if [[ -d "$item" ]]; then
+      # Create the target directory if it doesn't exist
+      mkdir -p "$target_path"
+      # Recursively process subdirectories
+      create_symlinks "$source_path" "$target_path" "1"
+    else
+      # Create symlink for files
+      if [[ -e "$target_path" && ! -L "$target_path" ]]; then
+        echo "Backing up existing file: $target_path"
+        mv "$target_path" "$target_path.backup"
+      fi
+      
+      if [[ ! -L "$target_path" ]]; then
+        echo "Linking $target_path"
+        ln -sf "$source_path" "$target_path"
+      fi
+    fi
+  done
+}
+
+# Start creating symlinks from the dotfiles directory to home
+create_symlinks "$DOTFILES_DIR" "$HOME"
+
+# setup oh-my-zsh
+if [[ ! -d ~/.oh-my-zsh ]]; then
+  git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+fi
+
+echo "Setting up vim plugins..."
+mkdir -p ~/.vim/bundle
+
+if [[ ! -d ~/.vim/bundle/html5 ]]; then
+  git clone https://github.com/othree/html5.vim.git ~/.vim/bundle/html5
+fi
+
+if [[ ! -d ~/.vim/bundle/smartinput ]]; then
+  git clone https://github.com/kana/vim-smartinput.git ~/.vim/bundle/smartinput
+fi
+
+if [[ ! -d ~/.vim/bundle/scss-syntax.vim ]]; then
+  git clone https://github.com/cakebaker/scss-syntax.vim.git ~/.vim/bundle/scss-syntax.vim
+fi
+
+if [[ ! -d ~/.vim/bundle/colors-solarized ]]; then
+  git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/colors-solarized
+fi
+
+if [[ ! -d ~/.vim/bundle/surround ]]; then
+  git clone https://github.com/tpope/vim-surround.git ~/.vim/bundle/surround
+fi
+
+if [[ ! -d ~/.vim/bundle/puppet ]]; then
+  git clone https://github.com/rodjek/vim-puppet.git ~/.vim/bundle/puppet
+fi
+
+if [[ ! -d ~/.vim/bundle/airline ]]; then
+  git clone https://github.com/bling/vim-airline.git ~/.vim/bundle/airline
+fi
+
+if [[ ! -d ~/.vim/bundle/dockerfile ]]; then
+  git clone https://github.com/honza/dockerfile.vim.git ~/.vim/bundle/dockerfile
+fi
+
+if [[ ! -d ~/.vim/bundle/go ]]; then
+  git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/go
+fi
+
+if (( ! $+commands[brew] )); then
+  echo "Installing homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+echo "Installing brew packages..."
+brew update
+brew bundle install --global --no-upgrade
+
+echo "Setting macOS settings..."
+defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm2-config"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
