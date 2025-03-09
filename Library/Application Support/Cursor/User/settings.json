@@ -43,7 +43,7 @@
         "editor.formatOnSave": false,
         "editor.formatOnPaste": false
     },
-    "editor.fontFamily": "Berkeley Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "TX-02, Berkeley Mono, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "git.openRepositoryInParentFolders": "always",
     "githubPullRequests.pullBranch": "never",
