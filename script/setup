@@ -13,7 +13,6 @@ echo "Creating symlinks..."
 
 # List of files/directories to exclude from symlinking
 EXCLUDE=(
-  "script"
   "README.md"
   ".git"
   ".gitignore"
@@ -163,6 +162,14 @@ echo "Setting macOS settings..."
 defaults write -g KeyRepeat -int 1
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
+defaults write NSGlobalDomain AppleTemperatureUnit -string "Celsius"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
+defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 1 "yyyy-MM-dd"
+defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 2 "yyyy-MM-dd"
+defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 3 "yyyy-MM-dd"
+defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 4 "yyyy-MM-dd"
 # prefer column view
 defaults write com.apple.finder FXPreferredViewStyle clmv
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
