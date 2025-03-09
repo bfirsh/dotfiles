@@ -11,6 +11,7 @@ brew "mas"
 brew "ripgrep"
 cask "1password"
 cask "chatgpt"
+cask "cursor"
 cask "discord"
 cask "gather"
 cask "ghostty"
@@ -22,6 +23,7 @@ cask "ollama"
 cask "orbstack"
 cask "spotify"
 cask "superhuman"
+cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "Slack", id: 803453959
 mas "Tailscale", id: 1475387142

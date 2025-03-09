@@ -160,7 +160,11 @@ brew update
 brew bundle install --global --no-upgrade
 
 echo "Setting macOS settings..."
+defaults write -g KeyRepeat -int 1
+defaults write -g InitialKeyRepeat -int 10
 defaults write -g ApplePressAndHoldEnabled -bool false
+# prefer column view
+defaults write com.apple.finder FXPreferredViewStyle clmv
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm2-config"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
