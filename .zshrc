@@ -33,16 +33,15 @@ plugins=(
   gpg-agent
   heroku
   history
+  macos
   mercurial
   node
   npm
   # causing hanging on latest node
   #npx
-  osx
   pip
   postgres
   python
-  ripgrep
   safe-paste
   yarn
   z
