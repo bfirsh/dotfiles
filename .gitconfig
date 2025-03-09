@@ -26,15 +26,11 @@
 	ui = auto
 
 [merge]
-    tool = threesome
-
-[mergetool "threesome"]
-    cmd = "mvim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
-    trustExitCode = true
+	conflictStyle = zdiff3
 
 [core]
 	excludesfile = ~/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 [push]
 	default = simple
 	autoSetupRemote = true
@@ -72,3 +68,7 @@
 	all = true
 [pull]
 	rebase = true
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
