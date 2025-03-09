@@ -129,6 +129,32 @@ if (( ! $+commands[brew] )); then
 fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+echo "Purchasing apps..."
+# Ensure mas is installed
+if ! command -v mas &> /dev/null; then
+    echo "Installing mas..."
+    brew install mas
+fi
+
+# Extract mas app IDs from Brewfile
+MAS_APPS=$(grep 'mas "' .Brewfile | awk -F'id: ' '{print $2}' | tr -d ',')
+
+# Get the list of installed Mac App Store apps once
+INSTALLED_APPS=$(mas list | awk '{print $1}')
+
+# Loop through each app ID
+echo "$MAS_APPS" | while read -r APP_ID; do
+    # Remove any whitespace issues
+    APP_ID=$(echo "$APP_ID" | tr -d '[:space:]')
+
+    if echo "$INSTALLED_APPS" | grep -q "^$APP_ID$"; then
+        echo "App with ID: $APP_ID is already owned."
+    else
+        echo "Purchasing app with ID: $APP_ID"
+        mas purchase "$APP_ID"
+    fi
+done
+
 echo "Installing brew packages..."
 brew update
 brew bundle install --global --no-upgrade
