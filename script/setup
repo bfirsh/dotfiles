@@ -170,6 +170,9 @@ defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 1 "yyyy-MM-dd"
 defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 2 "yyyy-MM-dd"
 defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 3 "yyyy-MM-dd"
 defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 4 "yyyy-MM-dd"
+# night shift
+defaults write com.apple.CoreBrightness CBBlueLightReductionCCTTarget -int 6500
+defaults write com.apple.CoreBrightness CBBlueLightReductionScheduleEnabled -bool true
 # prefer column view
 defaults write com.apple.finder FXPreferredViewStyle clmv
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
