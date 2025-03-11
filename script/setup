@@ -159,8 +159,8 @@ brew update
 brew bundle install --global --no-upgrade
 
 echo "Setting macOS settings..."
-defaults write -g KeyRepeat -int 1
-defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 2
+defaults write -g InitialKeyRepeat -int 15
 defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
 defaults write NSGlobalDomain AppleTemperatureUnit -string "Celsius"
