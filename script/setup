@@ -170,6 +170,9 @@ defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 1 "yyyy-MM-dd"
 defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 2 "yyyy-MM-dd"
 defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 3 "yyyy-MM-dd"
 defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 4 "yyyy-MM-dd"
+# disable keyboard backlight
+sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Keyboard Dim" -bool false
+sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Keyboard Backlight" -int 0
 # night shift
 defaults write com.apple.CoreBrightness CBBlueLightReductionCCTTarget -int 6500
 defaults write com.apple.CoreBrightness CBBlueLightReductionScheduleEnabled -bool true
