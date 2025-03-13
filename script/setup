@@ -17,6 +17,7 @@ EXCLUDE=(
   ".git"
   ".gitignore"
   ".gitmodules"
+  "script"
 )
 
 # Function to check if an item is in the exclude list
