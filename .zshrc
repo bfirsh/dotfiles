@@ -95,9 +95,11 @@ fig() {
 }
 
 # https://github.com/PhrozenByte/rmtrash
-#alias rm='rmtrash'
-#alias rmdir='rmdirtrash'
-#alias sudo='sudo '
+if [ -n rmtrash ]
+then
+    alias rm='rmtrash'
+    alias sudo='sudo '
+fi
 
 GRC=`which grc`
 if [ "$TERM" != dumb ] && [ -n GRC ]
