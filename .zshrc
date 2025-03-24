@@ -52,6 +52,9 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="vim"
 export CLICOLOR=1
 
+# Tab complete hidden files
+setopt globdots
+
 
 ## Paths
 export PATH=$PATH:/usr/sbin:/usr/local/sbin:/usr/src/google_appengine:~/bin:/usr/local/share/npm/bin
