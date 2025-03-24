@@ -179,6 +179,16 @@ defaults write com.apple.CoreBrightness CBBlueLightReductionCCTTarget -int 6500
 defaults write com.apple.CoreBrightness CBBlueLightReductionScheduleEnabled -bool true
 # prefer column view
 defaults write com.apple.finder FXPreferredViewStyle clmv
+
+# screenshots
+mkdir -p ~/Documents/Screenshots
+defaults write com.apple.screencapture location ~/Documents/Screenshots
+dockutil --add ~/Documents/Screenshots --view fan --sort dateadded --display folder --no-restart
+
+
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm2-config"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+killall Dock
+killall SystemUIServer

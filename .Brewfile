@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 brew "bat"
+brew "dockutil"
 brew "fd"
 brew "fzf"
 brew "grc"
