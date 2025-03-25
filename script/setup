@@ -183,12 +183,16 @@ defaults write com.apple.finder FXPreferredViewStyle clmv
 # screenshots
 mkdir -p ~/Documents/Screenshots
 defaults write com.apple.screencapture location ~/Documents/Screenshots
-dockutil --add ~/Documents/Screenshots --view fan --sort dateadded --display folder --no-restart
+dockutil --add ~/Documents/Screenshots --view fan --sort dateadded --display folder --no-restart  --replacing "Screenshots"
+
+# menu bar
+defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool false
 
 
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm2-config"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
+killall ControlCenter
 killall Dock
 killall SystemUIServer
