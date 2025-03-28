@@ -21,29 +21,13 @@ fi
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
-  aws
-  brew
   docker
   docker-compose
   extract
   fzf
-  gcloud
-  git
-  github
   gpg-agent
-  heroku
-  history
-  macos
-  mercurial
-  node
-  npm
-  # causing hanging on latest node
-  #npx
   pip
-  postgres
-  python
   safe-paste
-  yarn
   z
 )
 
