@@ -190,9 +190,6 @@ defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool f
 
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm2-config"
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-
 # Night shift
 nightlight temp 100
 nightlight schedule start
