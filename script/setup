@@ -183,7 +183,7 @@ defaults write com.apple.finder FXPreferredViewStyle clmv
 # screenshots
 mkdir -p ~/Documents/Screenshots
 defaults write com.apple.screencapture location ~/Documents/Screenshots
-dockutil --add ~/Documents/Screenshots --view fan --sort dateadded --display folder --no-restart  --replacing "Screenshots"
+dockutil --add ~/Documents/Screenshots --view fan --sort dateadded --display stack --no-restart  --replacing "Screenshots"
 
 # menu bar
 defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool false
