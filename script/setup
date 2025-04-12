@@ -194,6 +194,11 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 nightlight temp 100
 nightlight schedule start
 
+# Install ghostty terminfo to root user so sudo works
+# https://github.com/ghostty-org/ghostty/discussions/4273
+infocmp -x | sudo tic -x -
+
+
 killall ControlCenter
 killall Dock
 killall SystemUIServer
