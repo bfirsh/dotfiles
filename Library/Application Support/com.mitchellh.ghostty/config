@@ -3,3 +3,4 @@ theme = iTerm2 Solarized Dark
 confirm-close-surface = false
 shell-integration-features = sudo
 
+keybind = shift+enter=text:\n
