@@ -82,8 +82,7 @@ fig() {
 }
 
 # https://github.com/PhrozenByte/rmtrash
-if [ -n rmtrash ]
-then
+if command -v rmtrash >/dev/null 2>&1; then
     alias rm='rmtrash'
     alias sudo='sudo '
 fi
