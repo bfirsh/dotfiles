@@ -7,8 +7,13 @@ then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
   autoload -Uz compinit
-  compinit
+  compinit -u
 fi
+
+# Enable completion for hidden files
+setopt complete_in_word
+setopt always_to_end
+zstyle ':completion:*' completer _complete _match _approximate
 
 # pure
 autoload -U promptinit; promptinit
@@ -19,6 +24,9 @@ export CLICOLOR=1
 
 # Tab complete hidden files
 setopt globdots
+
+# Case insensitive tab completion and match hidden files
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 ## Paths
 export PATH=$PATH:/usr/sbin:/usr/local/sbin:~/bin
