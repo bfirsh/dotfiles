@@ -10,6 +10,10 @@ then
   compinit -u
 fi
 
+# vi
+bindkey -v
+export KEYTIMEOUT=10
+
 # Enable completion for hidden files
 setopt complete_in_word
 setopt always_to_end
