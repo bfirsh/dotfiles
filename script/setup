@@ -80,10 +80,6 @@ create_symlinks() {
 # Start creating symlinks from the dotfiles directory to home
 create_symlinks "$DOTFILES_DIR" "$HOME"
 
-# setup oh-my-zsh
-if [[ ! -d ~/.oh-my-zsh ]]; then
-  git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-fi
 
 echo "Setting up vim plugins..."
 mkdir -p ~/.vim/bundle
