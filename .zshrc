@@ -63,10 +63,8 @@ if command -v rmtrash >/dev/null 2>&1; then
     alias sudo='sudo '
 fi
 
-GRC=`which grc`
-if [ "$TERM" != dumb ] && [ -n GRC ]
-then
-    alias colourify="$GRC -es --colour=auto"
+if command -v grc >/dev/null 2>&1 && [ "$TERM" != dumb ]; then
+    alias colourify="grc -es --colour=auto"
     alias diff='colourify diff'
     alias gcc='colourify gcc'
     alias g++='colourify g++'
