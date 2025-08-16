@@ -27,10 +27,8 @@ function start_agent {
 
 #alias sudo='sudo -E env PATH=$PATH'
 
-GRC=`which grc`
-if [ "$TERM" != dumb ] && [ -n GRC ]
-then
-    alias colourify="$GRC -es --colour=auto"
+if command -v grc >/dev/null 2>&1 && [ "$TERM" != dumb ]; then
+    alias colourify="grc -es --colour=auto"
     alias configure='colourify ./configure'
     alias diff='colourify diff'
     alias make='colourify make'
