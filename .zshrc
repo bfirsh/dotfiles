@@ -1,8 +1,3 @@
-# Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
-
-export ZSH_THEME="blinks"
-
 # Homebrew, before everything else so plugins work
 eval $(/opt/homebrew/bin/brew shellenv)
 
@@ -15,30 +10,15 @@ then
   compinit
 fi
 
-# Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(
-  docker
-  docker-compose
-  extract
-  fzf
-  gpg-agent
-  pip
-  safe-paste
-  z
-)
-
-source $ZSH/oh-my-zsh.sh
+# pure
+autoload -U promptinit; promptinit
+prompt pure
 
 export EDITOR="vim"
 export CLICOLOR=1
 
 # Tab complete hidden files
 setopt globdots
-
 
 ## Paths
 export PATH=$PATH:/usr/sbin:/usr/local/sbin:~/bin
@@ -93,18 +73,12 @@ fi
 alias python=python3
 alias pip=pip3
 
-function git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}${ZSH_THEME_GIT_PROMPT_CLEAN}${ZSH_THEME_GIT_PROMPT_SUFFIX}"
-}
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+source <(fzf --zsh)
+eval "$(zoxide init zsh)"
 
 ulimit -n 65536 200000
 # started happening on bug sur?
 ulimit -f unlimited
-
 
 # last
 if [[ -e $HOME/.zshrc-private ]]; then
