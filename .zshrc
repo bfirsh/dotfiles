@@ -1,3 +1,7 @@
+# =============================================================================
+# PACKAGE MANAGERS & INITIALIZATION
+# =============================================================================
+
 # Homebrew, before everything else so plugins work
 eval $(/opt/homebrew/bin/brew shellenv)
 
@@ -10,7 +14,11 @@ then
   compinit -u
 fi
 
-# vi
+# =============================================================================
+# SHELL CONFIGURATION
+# =============================================================================
+
+# vi mode
 bindkey -v
 export KEYTIMEOUT=10
 
@@ -19,49 +27,68 @@ setopt HIST_VERIFY SHARE_HISTORY APPEND_HISTORY
 export HISTSIZE=10000
 export SAVEHIST=10000
 
-# Enable completion for hidden files
+# Completion settings
 setopt complete_in_word
 setopt always_to_end
+setopt globdots
 zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-# pure
-autoload -U promptinit; promptinit
-prompt pure
+# =============================================================================
+# ENVIRONMENT VARIABLES
+# =============================================================================
 
 export EDITOR="vim"
 export CLICOLOR=1
 
-# Tab complete hidden files
-setopt globdots
-
-# Case insensitive tab completion and match hidden files
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-## Paths
-export PATH=$PATH:/usr/sbin:/usr/local/sbin:~/bin
+# Paths
 export GOPATH=~/go
-export PATH="$GOPATH/bin:$PATH"
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$GOPATH/bin:/usr/local/heroku/bin:$PATH:/usr/sbin:/usr/local/sbin:~/bin"
 
+# =============================================================================
+# PROMPT
+# =============================================================================
 
-## SSH agent
+autoload -U promptinit; promptinit
+prompt pure
+
+# =============================================================================
+# SSH AGENT
+# =============================================================================
+
 if [ -z "$SSH_AUTH_SOCK" ]; then
     eval "$(ssh-agent -s)" > /dev/null
     ssh-add > /dev/null 2>&1
 fi
 
-## Aliases
+# =============================================================================
+# ALIASES & FUNCTIONS
+# =============================================================================
 
+# Docker
 fig() {
   command docker compose "$@"
 }
 
-# https://github.com/PhrozenByte/rmtrash
+# Safety aliases
+alias cp="cp -i"
+alias mv="mv -i"
+
+# Language shortcuts
+alias python=python3
+alias pip=pip3
+
+# Tool replacements
 if command -v rmtrash >/dev/null 2>&1; then
     alias rm='rmtrash'
     alias sudo='sudo '
 fi
 
+if command -v bat >/dev/null 2>&1; then
+    alias cat="bat -p"
+fi
+
+# grc colorization
 if command -v grc >/dev/null 2>&1 && [ "$TERM" != dumb ]; then
     alias colourify="grc -es --colour=auto"
     alias diff='colourify diff'
@@ -75,27 +102,25 @@ if command -v grc >/dev/null 2>&1 && [ "$TERM" != dumb ]; then
     alias traceroute='colourify /usr/sbin/traceroute'
 fi
 
-if command -v bat >/dev/null 2>&1; then
-    alias cat="bat -p"
-fi
-
-alias python=python3
-alias pip=pip3
-
-# Safety aliases
-alias cp="cp -i"
-alias mv="mv -i"
+# =============================================================================
+# EXTERNAL TOOLS
+# =============================================================================
 
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
+
+# =============================================================================
+# SYSTEM LIMITS
+# =============================================================================
 
 ulimit -n 65536 200000
 # started happening on bug sur?
 ulimit -f unlimited
 
-# last
+# =============================================================================
+# PRIVATE CONFIGURATION
+# =============================================================================
+
 if [[ -e $HOME/.zshrc-private ]]; then
     source $HOME/.zshrc-private
 fi
-
-
