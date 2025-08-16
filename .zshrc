@@ -45,16 +45,10 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 
 ## SSH agent
-SSH_ENV="$HOME/.ssh/environment"
-
-function start_agent {
-    echo "Initializing new SSH agent..."
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
-}
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval "$(ssh-agent -s)" > /dev/null
+    ssh-add > /dev/null 2>&1
+fi
 
 ## Aliases
 
