@@ -247,7 +247,6 @@ endif
 " Takes forever
 let g:syntastic_disabled_filetypes = ['sass', 'python']
 
-let g:syntastic_ruby_exec = '/usr/local/opt/rbenv/versions/1.9.3-p448/bin/ruby'
 
 " Fix colours in sign column
 highlight clear SignColumn
