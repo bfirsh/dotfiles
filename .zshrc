@@ -14,6 +14,11 @@ fi
 bindkey -v
 export KEYTIMEOUT=10
 
+# History settings
+setopt HIST_VERIFY SHARE_HISTORY APPEND_HISTORY
+export HISTSIZE=10000
+export SAVEHIST=10000
+
 # Enable completion for hidden files
 setopt complete_in_word
 setopt always_to_end
