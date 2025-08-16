@@ -41,27 +41,11 @@ setopt globdots
 
 
 ## Paths
-export PATH=$PATH:/usr/sbin:/usr/local/sbin:/usr/src/google_appengine:~/bin:/usr/local/share/npm/bin
-
-export NODE_PATH=/usr/local/lib/node_modules
-
+export PATH=$PATH:/usr/sbin:/usr/local/sbin:~/bin
 export GOPATH=~/go
 export PATH="$GOPATH/bin:$PATH"
-
-### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export PATH="$HOME/.local/bin:$PATH"
-
-# Use Homebrew's Python as `python
-export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
-
-export PATH="$HOME/.poetry/bin:$PATH"
-
-
-if [ -f /usr/bin/dircolors ]; then
-    eval `dircolors ~/.dir_colors`
-fi
 
 ## SSH agent
 SSH_ENV="$HOME/.ssh/environment"
@@ -116,8 +100,6 @@ function git_prompt_info() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-test -e /Users/ben/.iterm2_shell_integration.zsh && source /Users/ben/.iterm2_shell_integration.zsh || true
 
 ulimit -n 65536 200000
 # started happening on bug sur?
