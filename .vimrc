@@ -44,7 +44,6 @@ set wildignore+=*.o,*~,*.pyc,.git,.git-heroku,.hg,.svn,.sass-cache,node_modules
 
 if version >= 703
     set relativenumber
-    set undofile
 else
     set number
 endif
