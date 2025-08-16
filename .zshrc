@@ -88,6 +88,10 @@ fi
 alias python=python3
 alias pip=pip3
 
+# Safety aliases
+alias cp="cp -i"
+alias mv="mv -i"
+
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 
