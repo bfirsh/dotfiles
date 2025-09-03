@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+set -e
+
+DOTFILES_DIR="$HOME/.dotfiles"
+
+usage() {
+    echo "Usage: $0 <dotfile>"
+    echo "Convert a dotfile to a symlink managed by dotfiles"
+    echo ""
+    echo "Examples:"
+    echo "  $0 .vimrc"
+    echo "  $0 .config/git/config"
+    echo "  $0 ~/.config/zed/settings.json"
+    exit 1
+}
+
+if [ $# -ne 1 ]; then
+    usage
+fi
+
+DOTFILE="$1"
+
+# Remove leading ./ if present
+DOTFILE=${DOTFILE#./}
+
+# Handle absolute paths
+if [[ "$DOTFILE" == /* ]]; then
+    # Convert absolute path to relative path from HOME
+    if [[ "$DOTFILE" == "$HOME"/* ]]; then
+        DOTFILE=${DOTFILE#$HOME/}
+    else
+        echo "Error: Absolute path must be within home directory ($HOME)"
+        exit 1
+    fi
+fi
+
+HOME_PATH="$HOME/$DOTFILE"
+DOTFILES_PATH="$DOTFILES_DIR/$DOTFILE"
+
+# Check if file exists in home directory
+if [ ! -e "$HOME_PATH" ]; then
+    echo "Error: $HOME_PATH does not exist"
+    exit 1
+fi
+
+# Check if file already exists in dotfiles directory
+if [ -e "$DOTFILES_PATH" ]; then
+    echo "Error: $DOTFILES_PATH already exists"
+    exit 1
+fi
+
+# Check if it's already a symlink
+if [ -L "$HOME_PATH" ]; then
+    echo "Error: $HOME_PATH is already a symlink"
+    exit 1
+fi
+
+# Create directory structure in dotfiles if needed
+DOTFILES_DIR_PATH=$(dirname "$DOTFILES_PATH")
+if [ ! -d "$DOTFILES_DIR_PATH" ]; then
+    echo "Creating directory: $DOTFILES_DIR_PATH"
+    mkdir -p "$DOTFILES_DIR_PATH"
+fi
+
+# Move file to dotfiles directory
+echo "Moving $HOME_PATH to $DOTFILES_PATH"
+mv "$HOME_PATH" "$DOTFILES_PATH"
+
+# Create symlink
+echo "Creating symlink: $HOME_PATH -> $DOTFILES_PATH"
+ln -s "$DOTFILES_PATH" "$HOME_PATH"
+
+echo "Successfully converted $DOTFILE to symlink"
