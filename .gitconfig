@@ -36,11 +36,7 @@
 	autoSetupRemote = true
 	followTags = true
 [credential]
-	helper = cache --timeout=216000
-[filter "media"]
-	clean = git media clean %f
-	smudge = git media smudge %f
-	required = true
+	helper = osxkeychain
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -68,6 +64,8 @@
 	all = true
 [pull]
 	rebase = true
+[rebase]
+	autosquash = true
 [interactive]
 	diffFilter = delta --color-only
 [delta]
