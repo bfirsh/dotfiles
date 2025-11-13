@@ -43,7 +43,7 @@ export CLICOLOR=1
 
 # Paths
 export GOPATH=~/go
-export PATH="$GOPATH/bin:/usr/local/heroku/bin:$PATH:/usr/sbin:/usr/local/sbin:~/bin"
+export PATH="$GOPATH/bin:/usr/local/heroku/bin:$PATH:/usr/sbin:/usr/local/sbin:$HOME/.local/bin:$HOME/bin"
 
 # =============================================================================
 # PROMPT
