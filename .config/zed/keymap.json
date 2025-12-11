@@ -1,0 +1,22 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-cmd-h": "workspace::ActivatePaneLeft",
+      "ctrl-cmd-k": "workspace::ActivatePaneUp",
+      "ctrl-cmd-l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-d": "pane::SplitRight"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-cmd-j": "workspace::ActivatePaneDown"
+    }
+  }
+]

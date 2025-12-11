@@ -7,6 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ui_font_family": ".SystemUIFont",
+  "buffer_font_family": "TX-02",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
@@ -18,6 +24,6 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "Solarized Dark"
   }
 }
