@@ -177,6 +177,16 @@ defaults write com.apple.CoreBrightness CBBlueLightReductionScheduleEnabled -boo
 # prefer column view
 defaults write com.apple.finder FXPreferredViewStyle clmv
 
+# keyboard shortcuts for switching spaces: ctrl-h (left), ctrl-l (right)
+# FIXME: doesn't work
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 '{ enabled = true; value = { parameters = ( 104, 4, 262144 ); type = standard; }; }'
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 '{ enabled = true; value = { parameters = ( 108, 37, 262144 ); type = standard; }; }'
+
+# speed up space switching animation
+# FIXME: doesn't work
+defaults write com.apple.dock expose-animation-duration -float 0.1
+defaults write com.apple.dock workspaces-swoosh-animation-off -bool true
+
 # screenshots
 mkdir -p ~/Documents/Screenshots
 defaults write com.apple.screencapture location ~/Documents/Screenshots
@@ -199,3 +209,6 @@ infocmp -x | sudo tic -x -
 killall ControlCenter
 killall Dock
 killall SystemUIServer
+
+# reload keyboard shortcuts
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
