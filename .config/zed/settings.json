@@ -7,6 +7,26 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "format_on_save": "off",
+  "use_system_path_prompts": true,
+  "ssh_connections": [
+    {
+      "host": "demo",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/ubuntu"
+          ]
+        },
+        {
+          "paths": [
+            "/home/ubuntu/cog-examples"
+          ]
+        }
+      ]
+    }
+  ],
   "ui_font_family": ".SystemUIFont",
   "buffer_font_family": "TX-02",
   "telemetry": {
