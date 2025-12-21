@@ -21,6 +21,11 @@ EXCLUDE=(
   "script"
 )
 
+# Directories that should be symlinked as a whole (not recursed into)
+SYMLINK_DIR=(
+  ".config/karabiner"
+)
+
 # Function to check if an item is in the exclude list
 is_excluded() {
   local item="$1"
@@ -32,11 +37,22 @@ is_excluded() {
   return 1
 }
 
+# Function to check if a path should be symlinked as a whole directory
+should_symlink_dir() {
+  local rel_path="$1"
+  for dir in "${SYMLINK_DIR[@]}"; do
+    if [[ "$rel_path" == "$dir" ]]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
 # Function to recursively create symlinks
 create_symlinks() {
   local source_dir="$1"
   local target_dir="$2"
-  local rel_path="${3:-}"
+  local rel_prefix="${3:-}"
 
   # Process all items (files and directories) using Zsh glob qualifiers
   # (D) includes hidden files/dirs (dotfiles)
@@ -56,16 +72,16 @@ create_symlinks() {
 
     local target_path="$target_dir/$base_name"
     local source_path="${item}"
+    local item_rel_path="${rel_prefix:+$rel_prefix/}$base_name"
 
-    if [[ -d "$item" ]]; then
-      # Create the target directory if it doesn't exist
+    if [[ -d "$item" ]] && ! should_symlink_dir "$item_rel_path"; then
+      # Recurse into directory
       mkdir -p "$target_path"
-      # Recursively process subdirectories
-      create_symlinks "$source_path" "$target_path" "1"
+      create_symlinks "$source_path" "$target_path" "$item_rel_path"
     else
-      # Create symlink for files
+      # Symlink file or whole directory
       if [[ -e "$target_path" && ! -L "$target_path" ]]; then
-        echo "Backing up existing file: $target_path"
+        echo "Backing up existing: $target_path"
         mv "$target_path" "$target_path.backup"
       fi
 
