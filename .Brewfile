@@ -1,6 +1,6 @@
-tap "homebrew/bundle"
 tap "smudge/smudge"
 brew "bat"
+brew "cog"
 brew "dockutil"
 brew "fd"
 brew "fzf"
@@ -23,26 +23,24 @@ brew "ripgrep"
 brew "watch"
 brew "wget"
 brew "rmtrash"
-brew "tailscale"
+brew "uv"
+#brew "tailscale"
 brew "yq"
 brew "zoxide"
-cask "1password"
-cask "balenaetcher"
-cask "chatgpt"
-cask "cursor"
-cask "discord"
-cask "gather"
+#cask "1password"
+#cask "balenaetcher"
+#cask "chatgpt"
+cask "claude-code"
+#cask "cursor"
+#cask "discord"
 cask "ghostty"
-cask "google-chrome"
+#cask "google-chrome"
 cask "karabiner-elements"
-cask "notion"
-cask "notion-calendar"
 cask "orbstack"
 cask "spotify"
-cask "superhuman"
 cask "zed"
-cask "zoom"
-mas "1Password for Safari", id: 1569813296
-mas "Slack", id: 803453959
-mas "Tailscale", id: 1475387142
-mas "Yubico Authenticator", id: 1497506650
+#cask "zoom"
+#mas "1Password for Safari", id: 1569813296
+#mas "Slack", id: 803453959
+#mas "Tailscale", id: 1475387142
+#mas "Yubico Authenticator", id: 1497506650

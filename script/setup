@@ -3,10 +3,10 @@ set -e
 
 DOTFILES_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
-if [ ! -f ~/.ssh/id_rsa ]; then
-  echo "Put your SSH key in ~/.ssh"
-  exit 1
-fi
+#if [ ! -f ~/.ssh/id_rsa ]; then
+#  echo "Put your SSH key in ~/.ssh"
+#  exit 1
+#fi
 
 # Create symlinks from dotfiles to home directory
 echo "Creating symlinks..."
@@ -37,26 +37,26 @@ create_symlinks() {
   local source_dir="$1"
   local target_dir="$2"
   local rel_path="${3:-}"
-  
+
   # Process all items (files and directories) using Zsh glob qualifiers
   # (D) includes hidden files/dirs (dotfiles)
   # (N) sets nullglob (empty list if no matches)
   for item in "$source_dir"/*(DN) "$source_dir"/.(DN); do
     local base_name=$(basename "$item")
-    
+
     # Skip . and .. directories
     if [[ "$base_name" == "." || "$base_name" == ".." ]]; then
       continue
     fi
-    
+
     # Skip excluded items
     if is_excluded "$base_name"; then
       continue
     fi
-    
+
     local target_path="$target_dir/$base_name"
     local source_path="${item}"
-    
+
     if [[ -d "$item" ]]; then
       # Create the target directory if it doesn't exist
       mkdir -p "$target_path"
@@ -68,7 +68,7 @@ create_symlinks() {
         echo "Backing up existing file: $target_path"
         mv "$target_path" "$target_path.backup"
       fi
-      
+
       if [[ ! -L "$target_path" ]]; then
         echo "Linking $target_path"
         ln -sf "$source_path" "$target_path"
@@ -128,29 +128,29 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "Purchasing apps..."
 # Ensure mas is installed
-if ! command -v mas &> /dev/null; then
-    echo "Installing mas..."
-    brew install mas
-fi
+#if ! command -v mas &> /dev/null; then
+#    echo "Installing mas..."
+#    brew install mas
+#fi
 
 # Extract mas app IDs from Brewfile
-MAS_APPS=$(grep 'mas "' .Brewfile | awk -F'id: ' '{print $2}' | tr -d ',')
+#MAS_APPS=$(grep 'mas "' .Brewfile | awk -F'id: ' '{print $2}' | tr -d ',')
 
 # Get the list of installed Mac App Store apps once
-INSTALLED_APPS=$(mas list | awk '{print $1}')
+#INSTALLED_APPS=$(mas list | awk '{print $1}')
 
 # Loop through each app ID
-echo "$MAS_APPS" | while read -r APP_ID; do
-    # Remove any whitespace issues
-    APP_ID=$(echo "$APP_ID" | tr -d '[:space:]')
-
-    if echo "$INSTALLED_APPS" | grep -q "^$APP_ID$"; then
-        echo "App with ID: $APP_ID is already owned."
-    else
-        echo "Purchasing app with ID: $APP_ID"
-        mas purchase "$APP_ID"
-    fi
-done
+#echo "$MAS_APPS" | while read -r APP_ID; do
+#    # Remove any whitespace issues
+#    APP_ID=$(echo "$APP_ID" | tr -d '[:space:]')
+#
+#    if echo "$INSTALLED_APPS" | grep -q "^$APP_ID$"; then
+#        echo "App with ID: $APP_ID is already owned."
+#    else
+#        echo "Purchasing app with ID: $APP_ID"
+#        mas purchase "$APP_ID"
+#    fi
+#done
 
 echo "Installing brew packages..."
 brew update
