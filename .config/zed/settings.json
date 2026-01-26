@@ -42,8 +42,27 @@
   "ui_font_size": 15,
   "buffer_font_size": 13,
   "theme": {
-    "mode": "system",
-    "light": "One Light",
+    "mode": "dark",
+    "light": "Solarized Light",
     "dark": "Solarized Dark"
+  },
+  "auto_install_extensions": {
+    "astro": true,
+    "csv": true,
+    "docker-compose": true,
+    "dockerfile": true,
+    "git-firefly": true,
+    "html": true,
+    "latex": true,
+    "make": true,
+    "opencode": true,
+    "ruby": true,
+    "scss": true,
+    "solarized": true,
+    "sql": true,
+    "terraform": true,
+    "toml": true,
+    "xml": true,
+    "zig": true
   }
 }
