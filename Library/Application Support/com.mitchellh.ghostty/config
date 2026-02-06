@@ -4,5 +4,5 @@ confirm-close-surface = false
 shell-integration-features = sudo
 
 keybind = shift+enter=text:\n
-keybind = ctrl+cmd+h=goto_split:left
-keybind = ctrl+cmd+l=goto_split:right
+keybind = alt+h=goto_split:left
+keybind = alt+l=goto_split:right
