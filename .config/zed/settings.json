@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "vim": {
+    "toggle_relative_line_numbers": true
+  },
   "format_on_save": "off",
   "use_system_path_prompts": true,
   "ssh_connections": [
