@@ -1,7 +1,7 @@
 tap "smudge/smudge"
 tap "anomalyco/tap"
 brew "bat"
-brew "cog"
+#brew "cog"
 brew "dockutil"
 brew "fd"
 brew "fzf"
