@@ -11,10 +11,19 @@ if v:version < 703 || !has( 'patch584' )
     let g:loaded_youcompleteme = 1
 endif
 
-" Pathogen
-filetype off
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
+" vim-plug
+call plug#begin()
+Plug 'othree/html5.vim'
+Plug 'kana/vim-smartinput'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-surround'
+Plug 'rodjek/vim-puppet'
+Plug 'vim-airline/vim-airline'
+Plug 'honza/dockerfile.vim'
+Plug 'fatih/vim-go'
+Plug 'ctrlpvim/ctrlp.vim'
+call plug#end()
 
 " {{{ General
 

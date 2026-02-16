@@ -96,45 +96,8 @@ create_symlinks() {
 # Start creating symlinks from the dotfiles directory to home
 create_symlinks "$DOTFILES_DIR" "$HOME"
 
-
-echo "Setting up vim plugins..."
-mkdir -p ~/.vim/bundle
-
-if [[ ! -d ~/.vim/bundle/html5 ]]; then
-  git clone https://github.com/othree/html5.vim.git ~/.vim/bundle/html5
-fi
-
-if [[ ! -d ~/.vim/bundle/smartinput ]]; then
-  git clone https://github.com/kana/vim-smartinput.git ~/.vim/bundle/smartinput
-fi
-
-if [[ ! -d ~/.vim/bundle/scss-syntax.vim ]]; then
-  git clone https://github.com/cakebaker/scss-syntax.vim.git ~/.vim/bundle/scss-syntax.vim
-fi
-
-if [[ ! -d ~/.vim/bundle/colors-solarized ]]; then
-  git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/colors-solarized
-fi
-
-if [[ ! -d ~/.vim/bundle/surround ]]; then
-  git clone https://github.com/tpope/vim-surround.git ~/.vim/bundle/surround
-fi
-
-if [[ ! -d ~/.vim/bundle/puppet ]]; then
-  git clone https://github.com/rodjek/vim-puppet.git ~/.vim/bundle/puppet
-fi
-
-if [[ ! -d ~/.vim/bundle/airline ]]; then
-  git clone https://github.com/bling/vim-airline.git ~/.vim/bundle/airline
-fi
-
-if [[ ! -d ~/.vim/bundle/dockerfile ]]; then
-  git clone https://github.com/honza/dockerfile.vim.git ~/.vim/bundle/dockerfile
-fi
-
-if [[ ! -d ~/.vim/bundle/go ]]; then
-  git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/go
-fi
+echo "Installing/updating vim plugins..."
+vim +PlugInstall +PlugUpdate +qall
 
 if (( ! $+commands[brew] )); then
   echo "Installing homebrew..."
