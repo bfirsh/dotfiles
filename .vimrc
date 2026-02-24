@@ -22,7 +22,8 @@ Plug 'rodjek/vim-puppet'
 Plug 'vim-airline/vim-airline'
 Plug 'honza/dockerfile.vim'
 Plug 'fatih/vim-go'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " {{{ General
@@ -261,15 +262,8 @@ let g:syntastic_disabled_filetypes = ['sass', 'python']
 " Fix colours in sign column
 highlight clear SignColumn
 
-let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_user_command = {
-    \ 'types': {
-        \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
-        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-    \ },
-    \ 'fallback': 'find %s -type f'
-\ }
-let g:ctrlp_lazy_update = 150
+" fzf - use Ctrl-P to open file finder
+nnoremap <C-p> :Files<cr>
 
 let g:airline_powerline_fonts = 0
 
