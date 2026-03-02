@@ -27,7 +27,6 @@
 [push]
 	default = simple
 	autoSetupRemote = true
-	followTags = true
 [credential]
 	helper = osxkeychain
 [filter "lfs"]
