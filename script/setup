@@ -157,9 +157,12 @@ defaults write com.apple.CoreBrightness CBBlueLightReductionScheduleEnabled -boo
 defaults write com.apple.finder FXPreferredViewStyle clmv
 
 # keyboard shortcuts for switching spaces: ctrl-h (left), ctrl-l (right)
-# FIXME: doesn't work
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 '{ enabled = true; value = { parameters = ( 104, 4, 262144 ); type = standard; }; }'
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 '{ enabled = true; value = { parameters = ( 108, 37, 262144 ); type = standard; }; }'
+# parameters: (ASCII code, virtual keycode, modifier flags)
+# h=104/4, l=108/37, control=262144, control+shift=393216
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 "<dict><key>enabled</key><true/><key>value</key><dict><key>type</key><string>standard</string><key>parameters</key><array><integer>104</integer><integer>4</integer><integer>262144</integer></array></dict></dict>"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 80 "<dict><key>enabled</key><true/><key>value</key><dict><key>type</key><string>standard</string><key>parameters</key><array><integer>104</integer><integer>4</integer><integer>393216</integer></array></dict></dict>"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 "<dict><key>enabled</key><true/><key>value</key><dict><key>type</key><string>standard</string><key>parameters</key><array><integer>108</integer><integer>37</integer><integer>262144</integer></array></dict></dict>"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 "<dict><key>enabled</key><true/><key>value</key><dict><key>type</key><string>standard</string><key>parameters</key><array><integer>108</integer><integer>37</integer><integer>393216</integer></array></dict></dict>"
 
 # speed up space switching animation
 # FIXME: doesn't work
